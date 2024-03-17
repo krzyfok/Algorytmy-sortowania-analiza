@@ -22,6 +22,9 @@ using namespace std;
 			case 2:
 				obj.generacja();
 				break;
+			case 3: 
+				obj.wyswietlanie();
+				break;
 			case 4:
 				sort_menu(obj);
 				break;
