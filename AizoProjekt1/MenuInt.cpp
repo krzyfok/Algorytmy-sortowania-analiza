@@ -12,4 +12,17 @@ void MenuAbstr::generacja()
 {
 	cin >> liczba_elementow;
 	wsk = new int[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = rand();
+	}
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		cout << wsk[i] << "\n";
+	}
+	
+}
+void MenuAbstr::sort_wstawianie(int liczba_elementow)
+{
+	cout << liczba_elementow;
 }
