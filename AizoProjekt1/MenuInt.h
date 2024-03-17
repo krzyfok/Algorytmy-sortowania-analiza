@@ -1,13 +1,9 @@
 #ifndef MENUINT_H
 #define MENUINT_H
-class	MenuInt {
+#include"MenuAbstr.h"
+class	MenuInt : public MenuAbstr {
 	public:
 		
-	static void menu();
-	static void generacja();
-
-
-	static int liczba_elementow;
-	static int* wsk;
+		void generacja() override;
 };
 #endif

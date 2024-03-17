@@ -1,6 +1,7 @@
 #include<iostream>
 #include"MainMenu.h"
 #include"MenuInt.h"
+#include"MenuAbstr.h"
 using namespace std;
 void MainMenu:: main_menu() {
 	while (true)

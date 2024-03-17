@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="AizoProjekt1.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MenuAbstr.cpp" />
     <ClCompile Include="MenuInt.cpp" />
     <ClCompile Include="SortWstawianie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MenuAbstr.h" />
     <ClInclude Include="MenuInt.h" />
     <ClInclude Include="SortWstawianie.h" />
   </ItemGroup>
