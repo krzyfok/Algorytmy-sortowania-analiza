@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AizoProjekt1.cpp" />
+    <ClCompile Include="LicznikCzasu.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MenuAbstr.cpp" />
     <ClCompile Include="MenuInt.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LicznikCzasu.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MenuAbstr.h" />
     <ClInclude Include="MenuInt.h" />
