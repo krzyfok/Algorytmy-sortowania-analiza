@@ -9,5 +9,7 @@ public:
 	virtual void wyswietlanie();
 	static void sort_menu(MenuAbstr obj);
 	virtual void sort_wstawianie(int liczba_elementow);
+	virtual void sort_kopcowanie(int liczba_elementów);
+	virtual void naprawa_kopca(int tab[], int rodzic, int rozmiar);
 	
 };

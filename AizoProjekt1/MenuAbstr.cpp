@@ -8,27 +8,28 @@ using namespace std;
 		while (true)
 		{
 			printf("MENU\n");
-			printf("1.WCZYTAJ TABLICE\n");
-			printf("2.WYGENERUJ TABLICE\n");
-			printf("3.WYSWIETL TABLICE\n");
-			printf("4.SORTUJ\n");
-			printf("5.ZBIERANIE DANYCH\n");
-			printf("6.ZMIANA TYPU\n");
+			printf("1.WCZYTAJ TABLICE Z PLIKU\n");
+			printf("2.ZAPISZ WYNIK SORTOWANIA DO PLIKU\n");
+			printf("3.WYGENERUJ TABLICE\n");
+			printf("4.WYSWIETL TABLICE\n");
+			printf("5.SORTUJ\n");
+			printf("6.ZBIERANIE DANYCH\n");
+			printf("7.ZMIANA TYPU\n");
 
 			int x;
 			cin >> x;
 			switch (x)
 			{
-			case 2:
+			case 3:
 				obj.generacja();
 				break;
-			case 3: 
+			case 4: 
 				obj.wyswietlanie();
 				break;
-			case 4:
+			case 5:
 				sort_menu(obj);
 				break;
-			case 6:
+			case 7:
 				return;
 				
 			default:
@@ -56,6 +57,9 @@ using namespace std;
 		 {
 		 case 1:
 			 obj.sort_wstawianie(liczba_elementow);
+			 break;
+		 case 2:
+			 obj.sort_kopcowanie(liczba_elementow);
 			 break;
 		 }
 

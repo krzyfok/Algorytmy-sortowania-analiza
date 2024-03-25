@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MenuInt.h"
 #include"MenuAbstr.h"
+#include"LicznikCzasu.h"
 using namespace std;
 
 int MenuAbstr::liczba_elementow = 0;
@@ -18,13 +19,9 @@ void MenuAbstr::generacja()
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
 		wsk[i] = rand();
-		wsk_kopia[i] = wsk[i];
+		wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
 	}
-	for (int i = 0; i < liczba_elementow; i++)
-	{
-		cout << wsk[i] << "\n";
-	}
-	
+
 }
 
 void MenuAbstr::wyswietlanie()
@@ -36,10 +33,11 @@ void MenuAbstr::wyswietlanie()
 }
 void MenuAbstr::sort_wstawianie(int liczba_elementow)
 {
+	LicznikCzasu obj;
 	
-
 	int k;//obecnie porównywany elemtn 
 	int liczba;//porównywany elemnt
+	obj.start();
 	for (int i = 1; i < liczba_elementow; i++)
 	{
 		k = i - 1;
@@ -52,6 +50,21 @@ void MenuAbstr::sort_wstawianie(int liczba_elementow)
 		}
 		wsk_kopia[k + 1] = liczba;
 	}
+	obj.stop();
 
 	
+}
+void MenuAbstr::sort_kopcowanie(int liczba_elementów) {
+	LicznikCzasu obj;
+	
+
+}
+
+void MenuAbstr::naprawa_kopca(int tab[],int rodzic,int rozmiar)
+{
+	int najwieksza = rodzic;
+	int prawe_dziecko=2*rodzic+1;
+	int lewe_dziecko= 2* rodzic+2;
+
+
 }
