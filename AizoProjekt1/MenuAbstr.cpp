@@ -2,6 +2,12 @@
 #include<iostream>
 #include"MenuAbstr.h"
 using namespace std;
+
+
+int MenuAbstr::liczba_elementow = 0;
+int* MenuAbstr::wsk = nullptr; //wskaznik na dynamiczn¹ tablice
+int* MenuAbstr::wsk_kopia = nullptr;
+
  void MenuAbstr :: menu()
 	{
 	 MenuAbstr obj;
@@ -30,6 +36,8 @@ using namespace std;
 				sort_menu(obj);
 				break;
 			case 7:
+				delete[] wsk; //usuwanie dynamicznych tablic; // SPRAWDZIC CZY USUWANIE COS ZMIENIA>> PRZENIESC TABLICE Z INT NA FLOAT PO DODANIU MENU FLOAT!!!!!!
+				delete[] wsk_kopia;
 				return;
 				
 			default:
@@ -56,10 +64,10 @@ using namespace std;
 		 switch (x)
 		 {
 		 case 1:
-			 obj.sort_wstawianie(liczba_elementow);
+			 obj.sort_wstawianie(liczba_elementow,wsk_kopia);
 			 break;
 		 case 2:
-			 obj.sort_kopcowanie(liczba_elementow);
+			 obj.sort_kopcowanie(liczba_elementow,wsk_kopia);
 			 break;
 		 }
 

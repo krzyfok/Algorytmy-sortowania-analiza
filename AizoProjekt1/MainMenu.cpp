@@ -19,7 +19,11 @@ void MainMenu:: main_menu() {
 		switch (x)
 		{
 		case 1:
-			MenuInt::menu();
+		{
+			MenuInt menu_i;
+			menu_i.menu();
+		}
+			
 			break;
 		case 2:
 			break;

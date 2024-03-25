@@ -4,9 +4,6 @@
 #include"LicznikCzasu.h"
 using namespace std;
 
-int MenuAbstr::liczba_elementow = 0;
-int* MenuAbstr::wsk = nullptr; //wskaznik na dynamiczn¹ tablice
-int* MenuAbstr::wsk_kopia = nullptr;
 
  
 
@@ -31,7 +28,7 @@ void MenuAbstr::wyswietlanie()
 		cout << wsk_kopia[i] << "\n";
 	}
 }
-void MenuAbstr::sort_wstawianie(int liczba_elementow)
+void MenuAbstr::sort_wstawianie(int liczba_elementow, int tab[])
 {
 	LicznikCzasu obj;
 	
@@ -41,30 +38,48 @@ void MenuAbstr::sort_wstawianie(int liczba_elementow)
 	for (int i = 1; i < liczba_elementow; i++)
 	{
 		k = i - 1;
-		liczba = wsk_kopia[i];
-		while (k>=0 && wsk_kopia[k]>liczba)
+		liczba = tab[i];
+		while (k>=0 && tab[k]>liczba)
 		{
-			wsk_kopia[k+1] = wsk_kopia[k];
+			tab[k+1] = tab[k];
 			
 			k--;
 		}
-		wsk_kopia[k + 1] = liczba;
+		tab[k + 1] = liczba;
 	}
 	obj.stop();
 
 	
 }
-void MenuAbstr::sort_kopcowanie(int liczba_elementów) {
+void MenuAbstr::sort_kopcowanie(int rozmiar, int tab[]) {
 	LicznikCzasu obj;
+	for (int i = rozmiar / 2 - 1; i >= 0; i--) naprawa_kopca(tab, i, rozmiar);
+	
+	for (int i = rozmiar - 1; i > 0; i--)
+	{
+		swap(tab[0], tab[i]);
+		naprawa_kopca(tab, 0,i);
+	}
 	
 
 }
 
-void MenuAbstr::naprawa_kopca(int tab[],int rodzic,int rozmiar)
+void MenuAbstr::naprawa_kopca(int tab[],int korzen,int rozmiar)
 {
-	int najwieksza = rodzic;
+	int rodzic = korzen;
 	int prawe_dziecko=2*rodzic+1;
-	int lewe_dziecko= 2* rodzic+2;
-
-
+	int lewe_dziecko = 2 * rodzic + 2;
+	if (lewe_dziecko < rozmiar && tab[lewe_dziecko > tab[rodzic]])
+	{
+		rodzic=lewe_dziecko;
+	}
+	if(prawe_dziecko<rozmiar && tab[prawe_dziecko]>tab[rodzic])
+	{
+		rodzic = prawe_dziecko;
+	}
+	if (rodzic != korzen)
+	{
+		swap(tab[korzen], tab[rodzic]);
+			naprawa_kopca(tab,rodzic,rozmiar );
+	}
 }
