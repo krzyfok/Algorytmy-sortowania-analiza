@@ -1,14 +1,13 @@
 ﻿
 #include<iostream>
 #include"MenuAbstr.h"
+#include"LicznikCzasu.h"
 using namespace std;
 
 
-int MenuAbstr::liczba_elementow = 0;
-int* MenuAbstr::wsk = nullptr; //wskaznik na dynamiczn� tablice
-int* MenuAbstr::wsk_kopia = nullptr;
 
-void MenuAbstr::menu()
+
+void MenuAbstr::menu(MenuAbstr& obj)
 {
 	
 	while (true)
@@ -20,7 +19,8 @@ void MenuAbstr::menu()
 		printf("4.WYSWIETL TABLICE\n");
 		printf("5.SORTUJ\n");
 		printf("6.ZBIERANIE DANYCH\n");
-		printf("7.ZMIANA TYPU\n");
+		printf("7.ZALADUJ PONOWNIE POPRZEDNIA TABLICE\n");
+		printf("8.ZMIANA TYPU\n");
 
 		int x;
 		cin >> x;
@@ -33,13 +33,14 @@ void MenuAbstr::menu()
 			wyswietlanie();
 			break;
 		case 5:
-			sort_menu(*this);
+			obj.sort_menu(*this);
 			break;
 		case 7:
-			delete[] wsk; //usuwanie dynamicznych tablic; //PO ZMIANIE TYPU DANYCH BLŁAD trzeba jkaos zadeklarowac wskazniki
-			delete[] wsk_kopia;
-			wsk_kopia = nullptr;
-			wsk = nullptr;
+			obj.zaladuj_ponownie_poprzednia_tablica();
+			break;
+		case 8:
+			
+			obj.wyjscie();
 			return;
 
 		default:
@@ -49,9 +50,62 @@ void MenuAbstr::menu()
 	}
 
 }
+void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
+{
+	
+	LicznikCzasu licznik;
+
+	printf("WYBIERZ MIEJSCE PIVOTA\n");
+	printf("1.LEWO\n");
+	printf("2.SRODEK\n");
+	printf("3.PRAWO\n");
+	printf("4.LOSOWO\n");
+	printf("5.COFNIJ\n");
+
+
+	int x;
+	cin >> x;
+	switch (x)
+	{
+	case 1:
+	{
+		
+			licznik.start();
+			obj.quick_sort_wywolanie_Lp();
+			licznik.stop();
+			break;
+		
+	}
+	case 2:
+	{
+		licznik.start();
+		obj.quick_sort_wywolanie_Sp();
+		licznik.stop();
+		break;
+	}
+	case 3:
+	{
+		licznik.start();
+		obj.quick_sort_wywolanie_Pp();
+		licznik.stop();
+		break;
+	}
+	case 4:
+	{
+		licznik.start();
+		obj.quick_sort_wywolanie_Rp();
+		licznik.stop();
+		break;
+	}
+	case 5: 
+		return;
+	}
+}
+
+
 void MenuAbstr::sort_menu(MenuAbstr& obj)
 {
-
+	LicznikCzasu licznik;
 
 	printf("WYBIERZ TRYB SORTOWANIA\n");
 	printf("1.PRZEZ WSTAWIANIE\n");
@@ -66,13 +120,28 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 	switch (x)
 	{
 	case 1:
-	{ obj.sort_wstawianie(liczba_elementow, wsk_kopia); }
-		break;
-	case 2:
-	{ obj.sort_kopcowanie(liczba_elementow, wsk_kopia); }
-		break;
+	{
+		licznik.start();
+		obj.sort_wstawianie();
+		licznik.stop();
 	}
+	break;
+	case 2:
+	{
+		licznik.start();
+		obj.sort_kopcowanie();
+		licznik.stop();
+	}
+	break;
 
+	case 4:
+	{//DODAC PODMENU DO WYBORU
+
+		obj.qck_sort_menu(*this);
+	}
+	case 5:
+		return;
+	}
 
 
 }

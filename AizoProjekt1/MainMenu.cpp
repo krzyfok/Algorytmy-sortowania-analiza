@@ -22,14 +22,14 @@ void MainMenu::main_menu() {
 		case 1:
 		{
 			MenuInt menu_i;
-			menu_i.menu();
+			menu_i.menu(menu_i);
 		}
 
 		break;
 		case 2:
 		{
 			MenuFloat menu_f;
-			menu_f.menu();
+			menu_f.menu(menu_f);
 		}
 			break;
 

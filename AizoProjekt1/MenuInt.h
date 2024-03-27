@@ -1,13 +1,40 @@
-#ifndef MENUINT_H
+﻿#ifndef MENUINT_H
 #define MENUINT_H
 #include"MenuAbstr.h"
 class	MenuInt : public MenuAbstr {
+private:
+	static int liczba_elementow;
+	static int* wsk;
+	static int* wsk_kopia; //wskaznik na kopie tablicy, na niej wykonywane b�dzie sortowanie
+	
+
 public:
 	
 	void generacja() override;
-	void sort_wstawianie(int liczba_elementow, int tab[]) override;
+	void sort_wstawianie() override;
 	void  wyswietlanie() override;
-	void sort_kopcowanie(int rozmiar, int tab[]) override;
-	void naprawa_kopca(int tab[], int korzen, int rozmiar) override;
+	void sort_kopcowanie() override;
+	void naprawa_kopca( int korzen, int rozmiar) override;
+	void wyjscie()override;
+	void zaladuj_ponownie_poprzednia_tablica()override;
+	//qcksort pivot lewo
+	int quick_sort_podzial_Lp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_Lp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_wywolanie_Lp()override;
+	
+	//qcksort pivot srodek
+	int quick_sort_podzial_Sp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_Sp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_wywolanie_Sp()override;
+	
+	//qcksort pivot prawo
+	int quick_sort_podzial_Pp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_Pp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_wywolanie_Pp()override;
+	
+	//qcksort pivot random
+	int quick_sort_podzial_Rp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_Rp(int tab[], int poczatek, int koniec) override;
+	void quick_sort_wywolanie_Rp()override;
 };
 #endif
