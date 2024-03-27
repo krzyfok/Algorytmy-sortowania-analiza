@@ -1,5 +1,28 @@
 #include <iostream>
-#include "MenuInt.h"
+#include "MenuFloat.h"
 #include"MenuAbstr.h"
 #include"LicznikCzasu.h"
 using namespace std;
+void MenuFloat:: generacja() 
+{
+	printf("a");
+}
+void MenuFloat::sort_wstawianie(int liczba_elementow, int tab[])
+{
+	printf("a");
+}
+
+void MenuFloat:: wyswietlanie()
+{
+	printf("a");
+}
+
+void MenuFloat::sort_kopcowanie(int rozmiar, int tab[])
+{
+	printf("a");
+}
+
+void MenuFloat :: naprawa_kopca(int tab[], int korzen, int rozmiar)
+{
+
+}

@@ -1,15 +1,17 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "MenuInt.h"
 #include"MenuAbstr.h"
 #include"LicznikCzasu.h"
 using namespace std;
 
+int MenuInt::liczba_elementow = 0;
+int* MenuInt::wsk = nullptr; //wskaznik na dynamicznï¿½ tablice
+int* MenuInt::wsk_kopia = nullptr;
 
- 
 
-void MenuAbstr::generacja()
+void MenuInt:: generacja()
 {
-	cout << "Podaj liczbe elemntów: ";
+	cout << "Podaj liczbe elemntï¿½w: ";
 	cin >> liczba_elementow;
 	wsk = new int[liczba_elementow];
 	wsk_kopia = new int[liczba_elementow];
@@ -21,65 +23,65 @@ void MenuAbstr::generacja()
 
 }
 
-void MenuAbstr::wyswietlanie()
+void MenuInt::wyswietlanie()
 {
 	for (int i = 0; i < liczba_elementow; i++)
 	{
 		cout << wsk_kopia[i] << "\n";
 	}
 }
-void MenuAbstr::sort_wstawianie(int liczba_elementow, int tab[])
+void MenuInt::sort_wstawianie(int liczba_elementow, int tab[])
 {
 	LicznikCzasu obj;
-	
-	int k;//obecnie porównywany elemtn 
-	int liczba;//porównywany elemnt
+
+	int k;//obecnie porï¿½wnywany elemtn 
+	int liczba;//porï¿½wnywany elemnt
 	obj.start();
 	for (int i = 1; i < liczba_elementow; i++)
 	{
 		k = i - 1;
 		liczba = tab[i];
-		while (k>=0 && tab[k]>liczba)
+		while (k >= 0 && tab[k] > liczba)
 		{
-			tab[k+1] = tab[k];
-			
+			tab[k + 1] = tab[k];
+
 			k--;
 		}
 		tab[k + 1] = liczba;
 	}
 	obj.stop();
 
-	
+
 }
-void MenuAbstr::sort_kopcowanie(int rozmiar, int tab[]) {
+void MenuInt::sort_kopcowanie(int rozmiar, int tab[]) {
 	LicznikCzasu obj;
 	for (int i = rozmiar / 2 - 1; i >= 0; i--) naprawa_kopca(tab, i, rozmiar);
-	
+
 	for (int i = rozmiar - 1; i > 0; i--)
 	{
 		swap(tab[0], tab[i]);
-		naprawa_kopca(tab, 0,i);
+		naprawa_kopca(tab, 0, i);
 	}
-	
+
 
 }
 
-void MenuAbstr::naprawa_kopca(int tab[],int korzen,int rozmiar)
+void MenuInt::naprawa_kopca(int tab[], int korzen, int rozmiar)
 {
 	int rodzic = korzen;
-	int prawe_dziecko=2*rodzic+1;
+	int prawe_dziecko = 2 * rodzic + 1;
 	int lewe_dziecko = 2 * rodzic + 2;
 	if (lewe_dziecko < rozmiar && tab[lewe_dziecko > tab[rodzic]])
 	{
-		rodzic=lewe_dziecko;
+		rodzic = lewe_dziecko;
 	}
-	if(prawe_dziecko<rozmiar && tab[prawe_dziecko]>tab[rodzic])
+	if (prawe_dziecko<rozmiar && tab[prawe_dziecko]>tab[rodzic])
 	{
 		rodzic = prawe_dziecko;
 	}
 	if (rodzic != korzen)
 	{
 		swap(tab[korzen], tab[rodzic]);
-			naprawa_kopca(tab,rodzic,rozmiar );
+		naprawa_kopca(tab, rodzic, rozmiar);
 	}
 }

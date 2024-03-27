@@ -2,8 +2,9 @@
 #include"MainMenu.h"
 #include"MenuInt.h"
 #include"MenuAbstr.h"
+#include"MenuFloat.h"
 using namespace std;
-void MainMenu:: main_menu() {
+void MainMenu::main_menu() {
 	while (true)
 	{
 		printf("WYBIERZ TYP DANYCH\n");
@@ -12,7 +13,7 @@ void MainMenu:: main_menu() {
 		printf("3.DOUBLE\n");
 		printf("4.CHAR\n");
 		printf("5.WYJSCIE\n");
-		
+
 
 		int x;
 		cin >> x;
@@ -23,9 +24,13 @@ void MainMenu:: main_menu() {
 			MenuInt menu_i;
 			menu_i.menu();
 		}
-			
-			break;
+
+		break;
 		case 2:
+		{
+			MenuFloat menu_f;
+			menu_f.menu();
+		}
 			break;
 
 		case 3:

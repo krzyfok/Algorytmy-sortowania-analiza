@@ -6,5 +6,5 @@ int main()
 {
 	MainMenu men;
 	men.main_menu();
-	
+
 }
