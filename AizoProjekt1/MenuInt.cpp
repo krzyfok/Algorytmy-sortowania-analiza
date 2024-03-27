@@ -22,13 +22,22 @@ void MenuInt:: generacja()
 	}
 
 }
-
-void MenuInt::wyswietlanie()
+void MenuInt::wyswietlanie_przed_sortowaniem()
 {
 	for (int i = 0; i < liczba_elementow; i++)
 	{
-		cout << wsk_kopia[i] << "\n";
+		cout << wsk[i] << ",";
 	}
+	cout << "\n";
+}
+
+void MenuInt::wyswietlanie_po_sortowaniu()
+{
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		cout << wsk_kopia[i] << ",";
+	}
+	cout << "\n";
 }
 
 void MenuInt::wyjscie()
@@ -110,7 +119,7 @@ void MenuInt::naprawa_kopca( int korzen, int rozmiar)
 void MenuInt::quick_sort_wywolanie_Lp()
 {
 
-	quick_sort_Lp(wsk_kopia, 0, liczba_elementow);
+	quick_sort_Lp(wsk_kopia, 0, liczba_elementow-1);
 }
 
 
@@ -153,7 +162,7 @@ void MenuInt::quick_sort_Lp(int tab[], int poczatek, int koniec)
 void MenuInt::quick_sort_wywolanie_Sp()
 {
 
-	quick_sort_Sp(wsk_kopia, 0, liczba_elementow);
+	quick_sort_Sp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
 int MenuInt::quick_sort_podzial_Sp(int tab[], int poczatek, int koniec)
@@ -196,7 +205,7 @@ void MenuInt::quick_sort_Sp(int tab[], int poczatek, int koniec)
 void MenuInt::quick_sort_wywolanie_Pp()
 {
 
-	quick_sort_Pp(wsk_kopia, 0, liczba_elementow);
+	quick_sort_Pp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
 int MenuInt::quick_sort_podzial_Pp(int tab[], int poczatek, int koniec)
@@ -239,13 +248,13 @@ void MenuInt::quick_sort_Pp(int tab[], int poczatek, int koniec)
 void MenuInt::quick_sort_wywolanie_Rp()
 {
 
-	quick_sort_Rp(wsk_kopia, 0, liczba_elementow);
+	quick_sort_Rp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
 int MenuInt::quick_sort_podzial_Rp(int tab[], int poczatek, int koniec)
 {
 
-	int pivot = tab[poczatek];
+	int pivot = tab[rand()%(koniec-poczatek)+poczatek];
 	int l = poczatek;
 	int r = koniec;
 	while (true)
@@ -271,9 +280,9 @@ void MenuInt::quick_sort_Rp(int tab[], int poczatek, int koniec)
 	{
 		return;
 	}
-	int polowa = quick_sort_podzial_Lp(tab, poczatek, koniec);
-	quick_sort_Lp(tab, poczatek, polowa);
-	quick_sort_Lp(tab, polowa + 1, koniec);
+	int polowa = quick_sort_podzial_Rp(tab, poczatek, koniec);
+	quick_sort_Rp(tab, poczatek, polowa);
+	quick_sort_Rp(tab, polowa + 1, koniec);
 
 
 }

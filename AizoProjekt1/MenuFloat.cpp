@@ -16,13 +16,23 @@ void MenuFloat::sort_wstawianie()
 	printf("a");
 }
 
-void MenuFloat:: wyswietlanie()
+void MenuFloat:: wyswietlanie_po_sortowaniu()
 {
-	printf("a");
+	
 		for (int i = 0; i < liczba_elementow; i++)
 		{
-			cout << wsk_kopia[i] << "\n";
+			cout << wsk_kopia[i] << ",";
 		}
+		cout << "\n";
+}
+void MenuFloat::wyswietlanie_przed_sortowaniem()
+{
+	
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		cout << wsk[i] << ",";
+	}
+	cout << "\n";
 }
 void MenuFloat::zaladuj_ponownie_poprzednia_tablica()
 {

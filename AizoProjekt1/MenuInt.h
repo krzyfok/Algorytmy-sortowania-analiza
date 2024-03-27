@@ -12,7 +12,8 @@ public:
 	
 	void generacja() override;
 	void sort_wstawianie() override;
-	void  wyswietlanie() override;
+	void  wyswietlanie_przed_sortowaniem() override;
+	void  wyswietlanie_po_sortowaniu() override;
 	void sort_kopcowanie() override;
 	void naprawa_kopca( int korzen, int rozmiar) override;
 	void wyjscie()override;

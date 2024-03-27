@@ -8,7 +8,8 @@ private:
 	static int* wsk_kopia; //wskaznik na kopie tablicy, na niej wykonywane b�dzie sortowanie
 	void generacja() override;
 	void sort_wstawianie() override;
-	void  wyswietlanie() override;
+	void  wyswietlanie_przed_sortowaniem() override;
+	void wyswietlanie_po_sortowaniu()override;
 	void wyjscie()override;
 	void zaladuj_ponownie_poprzednia_tablica()override;
 	void sort_kopcowanie() override;

@@ -5,7 +5,8 @@ public:
 	void menu(MenuAbstr& obj);
 private:
 	virtual void generacja()=0;
-	virtual void wyswietlanie()=0;
+	virtual void wyswietlanie_przed_sortowaniem()=0;
+	virtual void wyswietlanie_po_sortowaniu() = 0;
 	virtual void wyjscie() = 0;
 	virtual void zaladuj_ponownie_poprzednia_tablica() = 0;
 	void sort_menu(MenuAbstr& obj);

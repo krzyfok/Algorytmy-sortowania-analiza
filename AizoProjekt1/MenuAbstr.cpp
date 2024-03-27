@@ -16,11 +16,12 @@ void MenuAbstr::menu(MenuAbstr& obj)
 		printf("1.WCZYTAJ TABLICE Z PLIKU\n");
 		printf("2.ZAPISZ WYNIK SORTOWANIA DO PLIKU\n");
 		printf("3.WYGENERUJ TABLICE\n");
-		printf("4.WYSWIETL TABLICE\n");
-		printf("5.SORTUJ\n");
-		printf("6.ZBIERANIE DANYCH\n");
-		printf("7.ZALADUJ PONOWNIE POPRZEDNIA TABLICE\n");
-		printf("8.ZMIANA TYPU\n");
+		printf("4.WYSWIETL TABLICE PRZED SORTOWANIEM\n");
+		printf("5.WYSWIETL TABLICE PO SORTOWANIU\n");
+		printf("6.SORTUJ\n");
+		printf("7.ZBIERANIE DANYCH\n");
+		printf("8.ZALADUJ PONOWNIE POPRZEDNIA TABLICE\n");
+		printf("9.ZMIANA TYPU\n");
 
 		int x;
 		cin >> x;
@@ -30,17 +31,20 @@ void MenuAbstr::menu(MenuAbstr& obj)
 			generacja();
 			break;
 		case 4:
-			wyswietlanie();
+			wyswietlanie_przed_sortowaniem();
 			break;
 		case 5:
-			obj.sort_menu(*this);
+			wyswietlanie_po_sortowaniu();
 			break;
-		case 7:
-			obj.zaladuj_ponownie_poprzednia_tablica();
+		case 6:
+			sort_menu(*this);
 			break;
 		case 8:
+			zaladuj_ponownie_poprzednia_tablica();
+			break;
+		case 9:
 			
-			obj.wyjscie();
+			wyjscie();
 			return;
 
 		default:
