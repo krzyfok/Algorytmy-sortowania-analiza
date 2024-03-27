@@ -36,8 +36,10 @@ void MenuAbstr::menu()
 			sort_menu(*this);
 			break;
 		case 7:
-			delete[] wsk; //usuwanie dynamicznych tablic; // SPRAWDZIC CZY USUWANIE COS ZMIENIA>> PRZENIESC TABLICE Z INT NA FLOAT PO DODANIU MENU FLOAT!!!!!!
+			delete[] wsk; //usuwanie dynamicznych tablic; //PO ZMIANIE TYPU DANYCH BLŁAD trzeba jkaos zadeklarowac wskazniki
 			delete[] wsk_kopia;
+			wsk_kopia = nullptr;
+			wsk = nullptr;
 			return;
 
 		default:

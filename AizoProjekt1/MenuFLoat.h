@@ -2,9 +2,7 @@
 #define MENUFLOAT_H
 #include"MenuAbstr.h"
 class	MenuFloat : public MenuAbstr {
-	static int liczba_elementow;
-	static int* wsk;
-	static int* wsk_kopia;
+	
 	void generacja() override;
 	void sort_wstawianie(int liczba_elementow, int tab[]) override;
 	void  wyswietlanie() override;

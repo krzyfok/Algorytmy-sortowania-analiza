@@ -4,9 +4,7 @@
 #include"LicznikCzasu.h"
 using namespace std;
 
-int MenuInt::liczba_elementow = 0;
-int* MenuInt::wsk = nullptr; //wskaznik na dynamiczn� tablice
-int* MenuInt::wsk_kopia = nullptr;
+
 
 
 void MenuInt:: generacja()
@@ -40,14 +38,14 @@ void MenuInt::sort_wstawianie(int liczba_elementow, int tab[])
 	for (int i = 1; i < liczba_elementow; i++)
 	{
 		k = i - 1;
-		liczba = tab[i];
-		while (k >= 0 && tab[k] > liczba)
+		liczba = wsk_kopia[i];
+		while (k >= 0 && wsk_kopia[k] > liczba)
 		{
-			tab[k + 1] = tab[k];
+			wsk_kopia[k + 1] = wsk_kopia[k];
 
 			k--;
 		}
-		tab[k + 1] = liczba;
+		wsk_kopia[k + 1] = liczba;
 	}
 	obj.stop();
 
@@ -55,6 +53,7 @@ void MenuInt::sort_wstawianie(int liczba_elementow, int tab[])
 }
 void MenuInt::sort_kopcowanie(int rozmiar, int tab[]) {
 	LicznikCzasu obj;
+	obj.start();
 	for (int i = rozmiar / 2 - 1; i >= 0; i--) naprawa_kopca(tab, i, rozmiar);
 
 	for (int i = rozmiar - 1; i > 0; i--)
@@ -62,7 +61,7 @@ void MenuInt::sort_kopcowanie(int rozmiar, int tab[]) {
 		swap(tab[0], tab[i]);
 		naprawa_kopca(tab, 0, i);
 	}
-
+	obj.stop();
 
 }
 
@@ -71,7 +70,7 @@ void MenuInt::naprawa_kopca(int tab[], int korzen, int rozmiar)
 	int rodzic = korzen;
 	int prawe_dziecko = 2 * rodzic + 1;
 	int lewe_dziecko = 2 * rodzic + 2;
-	if (lewe_dziecko < rozmiar && tab[lewe_dziecko > tab[rodzic]])
+	if (lewe_dziecko < rozmiar && tab[lewe_dziecko ]> tab[rodzic])
 	{
 		rodzic = lewe_dziecko;
 	}
