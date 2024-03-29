@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include<fstream>
+#include<string>
 #include "MenuInt.h"
 #include"MenuAbstr.h"
 
@@ -7,7 +9,7 @@ int MenuInt::liczba_elementow = 0;
 int* MenuInt::wsk = nullptr; //wskaznik na dynamiczn� tablice
 int* MenuInt::wsk_kopia = nullptr;
 
-
+//DODAC SHELLA
 //PRZENOSZENIE TABLIC DO PONOWENGO SORTOWANIE ??JAKIES KOPIIOWANIE Z WSK DO WSK_KOPPIA???
 void MenuInt:: generacja()
 {
@@ -18,10 +20,48 @@ void MenuInt:: generacja()
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
 		wsk[i] = rand();
-		wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
+		wsk_kopia[i] = wsk[i];
+		//wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
 	}
 
 }
+void MenuInt::wczytwanie_z_pliku()
+{
+	string nazwa;
+	
+	string wiersz;
+
+	cout << "PODAJ NAZWE PLIKU: ";
+	cin >> nazwa;
+	ifstream plik(nazwa);
+	int i = 0;
+	if (plik.is_open())
+	{
+		while (!plik.eof())
+		{
+			plik >> wiersz;
+			if (i == 0)
+			{
+				liczba_elementow = stoi(wiersz);
+				wsk = new int[liczba_elementow];
+				wsk_kopia = new int[liczba_elementow];
+			
+			}
+			else
+			{
+				wsk[i - 1] = stoi(wiersz);
+				wsk_kopia[i - 1] = wsk[i - 1];
+			}
+			i++;
+			
+		}
+		
+	}
+	else(cout << "BRAK PLIKU\n");
+	plik.close();
+
+}
+
 void MenuInt::wyswietlanie_przed_sortowaniem()
 {
 	for (int i = 0; i < liczba_elementow; i++)
@@ -243,7 +283,7 @@ void MenuInt::quick_sort_Pp(int tab[], int poczatek, int koniec)
 
 
 }
-//PIVOT RANDOM ??DODAC LSOOWANIE??
+//PIVOT RANDOM
 
 void MenuInt::quick_sort_wywolanie_Rp()
 {
@@ -285,4 +325,39 @@ void MenuInt::quick_sort_Rp(int tab[], int poczatek, int koniec)
 	quick_sort_Rp(tab, polowa + 1, koniec);
 
 
+}
+
+void MenuInt::shell_v1()
+{
+	for(int krok=liczba_elementow/2;krok>0;krok=krok/2)
+	{
+		for (int i = krok; i < liczba_elementow; i++)
+		{
+			int j;
+			int element_sprawdzany = wsk_kopia[i];
+			for (j = i; j >= krok && wsk_kopia[j - krok] > element_sprawdzany; j = j - krok)
+			{
+				wsk_kopia[j] = wsk_kopia[j - krok];				
+
+			}
+			wsk_kopia[j] = element_sprawdzany;
+		}
+	}
+}
+void MenuInt::shell_v2()
+{
+	for (int krok=5; krok > 0; krok = krok -2)
+	{
+		for (int i = krok; i < liczba_elementow; i++)
+		{
+			int j;
+			int element_sprawdzany = wsk_kopia[i];
+			for (j = i; j >= krok && wsk_kopia[j - krok] > element_sprawdzany; j = j - krok)
+			{
+				wsk_kopia[j] = wsk_kopia[j - krok];
+
+			}
+			wsk_kopia[j] = element_sprawdzany;
+		}
+	}
 }

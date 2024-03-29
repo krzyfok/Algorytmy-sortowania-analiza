@@ -11,6 +11,10 @@ void MenuFloat:: generacja()
 {
 	printf("a");
 }
+void MenuFloat::wczytwanie_z_pliku()
+{
+
+}
 void MenuFloat::sort_wstawianie()
 {
 	printf("a");
@@ -108,6 +112,14 @@ int MenuFloat::quick_sort_podzial_Rp(int tab[], int poczatek, int koniec)
 }
 
 void MenuFloat::quick_sort_Rp(int tab[], int poczatek, int koniec)
+{
+
+}
+void MenuFloat::shell_v1()
+{
+
+}
+void MenuFloat::shell_v2()
 {
 
 }

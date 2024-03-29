@@ -14,35 +14,34 @@ void MenuAbstr::menu(MenuAbstr& obj)
 	{
 		printf("MENU\n");
 		printf("1.WCZYTAJ TABLICE Z PLIKU\n");
-		printf("2.ZAPISZ WYNIK SORTOWANIA DO PLIKU\n");
-		printf("3.WYGENERUJ TABLICE\n");
-		printf("4.WYSWIETL TABLICE PRZED SORTOWANIEM\n");
-		printf("5.WYSWIETL TABLICE PO SORTOWANIU\n");
-		printf("6.SORTUJ\n");
-		printf("7.ZBIERANIE DANYCH\n");
-		printf("8.ZALADUJ PONOWNIE POPRZEDNIA TABLICE\n");
-		printf("9.ZMIANA TYPU\n");
+		printf("2.WYGENERUJ TABLICE\n");
+		printf("3.WYSWIETL TABLICE PRZED SORTOWANIEM\n");
+		printf("4.WYSWIETL TABLICE PO SORTOWANIU\n");
+		printf("5.SORTUJ\n");
+		printf("6.SPRAWDZ POPRAWNOSC\n");
+		printf("7.ZMIANA TYPU\n");
 
 		int x;
 		cin >> x;
 		switch (x)
 		{
-		case 3:
+		case 1:
+			obj.wczytwanie_z_pliku();
+			break;
+		case 2:
 			generacja();
 			break;
-		case 4:
+		case 3:
 			wyswietlanie_przed_sortowaniem();
 			break;
-		case 5:
+		case 4:
 			wyswietlanie_po_sortowaniu();
 			break;
-		case 6:
+		case 5:
 			sort_menu(*this);
 			break;
-		case 8:
-			zaladuj_ponownie_poprzednia_tablica();
-			break;
-		case 9:
+		
+		case 7:
 			
 			wyjscie();
 			return;
@@ -106,11 +105,39 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 	}
 }
 
-
-void MenuAbstr::sort_menu(MenuAbstr& obj)
+void MenuAbstr::shell_menu(MenuAbstr& obj)
 {
 	LicznikCzasu licznik;
 
+	printf("WYBIERZ ALGORYTM\n");
+	printf("1.KLASYCZNY\n");
+	printf("2.5,3,1\n");
+	printf("3.COFNIJ\n");
+
+
+	int x;
+	cin >> x;
+	switch (x)
+	{
+	case 1:
+		licznik.start();
+		obj.shell_v1();
+		licznik.stop();
+		break;
+	case 2:
+		licznik.start();
+		obj.shell_v2();
+		licznik.stop();
+		break;
+	case 3:
+		return;
+	}
+
+}
+void MenuAbstr::sort_menu(MenuAbstr& obj)
+{
+	LicznikCzasu licznik;
+	obj.zaladuj_ponownie_poprzednia_tablica();
 	printf("WYBIERZ TRYB SORTOWANIA\n");
 	printf("1.PRZEZ WSTAWIANIE\n");
 	printf("2.PRZEZ KOPCOWANIE\n");
@@ -137,11 +164,17 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 		licznik.stop();
 	}
 	break;
-
+	case 3:
+	{
+		obj.shell_menu(*this);
+		break;
+	}
+		break;
 	case 4:
-	{//DODAC PODMENU DO WYBORU
+	{
 
 		obj.qck_sort_menu(*this);
+		break;
 	}
 	case 5:
 		return;

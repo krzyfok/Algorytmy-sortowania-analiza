@@ -12,6 +12,7 @@ public:
 	
 	void generacja() override;
 	void sort_wstawianie() override;
+	void wczytwanie_z_pliku()override;
 	void  wyswietlanie_przed_sortowaniem() override;
 	void  wyswietlanie_po_sortowaniu() override;
 	void sort_kopcowanie() override;
@@ -37,5 +38,8 @@ public:
 	int quick_sort_podzial_Rp(int tab[], int poczatek, int koniec) override;
 	void quick_sort_Rp(int tab[], int poczatek, int koniec) override;
 	void quick_sort_wywolanie_Rp()override;
+
+	void shell_v1()override;
+	void shell_v2()override;
 };
 #endif
