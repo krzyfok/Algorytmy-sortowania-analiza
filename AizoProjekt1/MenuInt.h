@@ -11,35 +11,31 @@ private:
 public:
 	
 	void generacja() override;
-	void sort_wstawianie() override;
-	void wczytwanie_z_pliku()override;
-	void  wyswietlanie_przed_sortowaniem() override;
-	void  wyswietlanie_po_sortowaniu() override;
-	void sort_kopcowanie() override;
-	void naprawa_kopca( int korzen, int rozmiar) override;
-	void wyjscie()override;
-	void zaladuj_ponownie_poprzednia_tablica()override;
+	void sort_wstawianie_wywolanie() override;
+	void wczytwanie_tablicy_z_pliku()override;
+	void  wyswietlanie_przed_sortowaniem_wywolanie() override;
+	void  wyswietlanie_po_sortowaniu_wywolanie()override;
+	void sort_kopcowanie_wywolanie() override;
+	void usuwanie_wywolanie()override;
+	void sprawdzenie_poprawnosci_sortowania_wywolanie()override;
+	void kopiowanie_tablicy_wywolanie()override;
 	//qcksort pivot lewo
-	int quick_sort_podzial_Lp(int tab[], int poczatek, int koniec) override;
-	void quick_sort_Lp(int tab[], int poczatek, int koniec) override;
+	
 	void quick_sort_wywolanie_Lp()override;
 	
 	//qcksort pivot srodek
-	int quick_sort_podzial_Sp(int tab[], int poczatek, int koniec) override;
-	void quick_sort_Sp(int tab[], int poczatek, int koniec) override;
+	
 	void quick_sort_wywolanie_Sp()override;
 	
 	//qcksort pivot prawo
-	int quick_sort_podzial_Pp(int tab[], int poczatek, int koniec) override;
-	void quick_sort_Pp(int tab[], int poczatek, int koniec) override;
+	
 	void quick_sort_wywolanie_Pp()override;
 	
 	//qcksort pivot random
-	int quick_sort_podzial_Rp(int tab[], int poczatek, int koniec) override;
-	void quick_sort_Rp(int tab[], int poczatek, int koniec) override;
+	
 	void quick_sort_wywolanie_Rp()override;
 
-	void shell_v1()override;
-	void shell_v2()override;
+	void shell_v1_wywolanie()override;
+	void shell_v2_wywolanie()override;
 };
 #endif

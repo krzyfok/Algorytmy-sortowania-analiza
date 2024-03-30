@@ -1,8 +1,10 @@
 #include<iostream>
 #include"MainMenu.h"
 #include"MenuInt.h"
-#include"MenuAbstr.h"
 #include"MenuFloat.h"
+#include"MenuDouble.h"
+#include"MenuChar.h"
+#include"MenuAbstr.h"
 using namespace std;
 void MainMenu::main_menu() {
 	while (true)
@@ -34,8 +36,16 @@ void MainMenu::main_menu() {
 			break;
 
 		case 3:
+		{
+			MenuDouble menu_d;
+			menu_d.menu(menu_d);
+		}
 			break;
-		case 4:
+		case 4: {
+			MenuChar menu_c;
+			menu_c.menu(menu_c);
+
+		}
 			break;
 
 		case 5:

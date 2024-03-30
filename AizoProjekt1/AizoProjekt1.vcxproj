@@ -131,6 +131,8 @@
     <ClCompile Include="LicznikCzasu.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MenuAbstr.cpp" />
+    <ClCompile Include="MenuChar.cpp" />
+    <ClCompile Include="MenuDouble.cpp" />
     <ClCompile Include="MenuFloat.cpp" />
     <ClCompile Include="MenuInt.cpp" />
   </ItemGroup>
@@ -138,7 +140,9 @@
     <ClInclude Include="LicznikCzasu.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MenuAbstr.h" />
-    <ClInclude Include="MenuFLoat.h" />
+    <ClInclude Include="MenuChar.h" />
+    <ClInclude Include="MenuDouble.h" />
+    <ClInclude Include="MenuFloat.h" />
     <ClInclude Include="MenuInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

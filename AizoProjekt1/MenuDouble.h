@@ -1,11 +1,11 @@
-﻿#ifndef MENUFLOAT_H
-#define MENUFLOAT_H
+﻿#ifndef MENUDOUBLE_H
+#define MENUDOUBLE_H
 #include"MenuAbstr.h"
-class	MenuFloat : public MenuAbstr {
+class	MenuDouble : public MenuAbstr {
 private:
 	static int liczba_elementow;
-	static float* wsk;
-	static float* wsk_kopia; //wskaznik na kopie tablicy, na niej wykonywane b�dzie sortowanie
+	static double* wsk;
+	static double* wsk_kopia; //wskaznik na kopie tablicy, na niej wykonywane b�dzie sortowanie
 
 
 public:

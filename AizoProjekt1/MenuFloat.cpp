@@ -1,125 +1,156 @@
 ﻿#include <iostream>
+
 #include "MenuFloat.h"
 #include"MenuAbstr.h"
-#include"LicznikCzasu.h"
+
 using namespace std;
 int MenuFloat::liczba_elementow = 0;
-int* MenuFloat::wsk = nullptr; //wskaznik na dynamiczn� tablice
-int* MenuFloat::wsk_kopia = nullptr;
+float* MenuFloat::wsk = nullptr; //wskaznik na dynamiczn� tablice
+float* MenuFloat::wsk_kopia = nullptr;
 
-void MenuFloat:: generacja() 
-{
-	printf("a");
-}
-void MenuFloat::wczytwanie_z_pliku()
-{
 
-}
-void MenuFloat::sort_wstawianie()
+void MenuFloat::generacja()
 {
-	printf("a");
-}
-
-void MenuFloat:: wyswietlanie_po_sortowaniu()
-{
-	
-		for (int i = 0; i < liczba_elementow; i++)
-		{
-			cout << wsk_kopia[i] << ",";
-		}
-		cout << "\n";
-}
-void MenuFloat::wyswietlanie_przed_sortowaniem()
-{
-	
-	for (int i = 0; i < liczba_elementow; i++)
+	cout << "Podaj liczbe elemntow: ";
+	cin >> liczba_elementow;
+	wsk = new float[liczba_elementow];
+	wsk_kopia = new float[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
-		cout << wsk[i] << ",";
+		wsk[i] = (float)(rand()) / (float)(rand());
+		wsk_kopia[i] = wsk[i];
+		//wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
 	}
-	cout << "\n";
+
 }
-void MenuFloat::zaladuj_ponownie_poprzednia_tablica()
+void MenuFloat::wczytwanie_tablicy_z_pliku()
 {
+
+
+		string nazwa;
+
+		string wiersz;
+
+		cout << "PODAJ NAZWE PLIKU: ";
+		cin >> nazwa;
+		ifstream plik(nazwa);
+		int i = 0;
+		if (plik.is_open())
+		{
+			while (!plik.eof())
+			{
+				plik >> wiersz;
+				if (i == 0)
+				{
+					liczba_elementow = stoi(wiersz);
+					wsk = new float[liczba_elementow];
+					wsk_kopia = new float[liczba_elementow];
+
+				}
+				else
+				{
+					wsk[i - 1] = stof(wiersz);
+					wsk_kopia[i - 1] = wsk[i - 1];
+
+				}
+				i++;
+
+			}
+
+		}
+		else(cout << "BRAK PLIKU\n");
+		plik.close();
+
+	
 
 }
 
-void MenuFloat::wyjscie()
+void MenuFloat::usuwanie_wywolanie()
 {
-				delete[] wsk; //usuwanie dynamicznych tablic; //PO ZMIANIE TYPU DANYCH BLŁAD trzeba jkaos zadeklarowac wskazniki
-				delete[] wsk_kopia;
-				liczba_elementow = 0;
-				wsk = nullptr;
-				wsk_kopia = nullptr;
-}
-void MenuFloat::sort_kopcowanie()
-{
-	printf("a");
+	usuwanie(wsk, wsk_kopia, liczba_elementow);
 }
 
-void MenuFloat :: naprawa_kopca( int korzen, int rozmiar)
+void MenuFloat::sprawdzenie_poprawnosci_sortowania_wywolanie()
+{
+	sprawdzanie_poprawnosci_sortowania(wsk_kopia, liczba_elementow);
+}
+
+void MenuFloat::wyswietlanie_przed_sortowaniem_wywolanie()
 {
 
+	wyswietlanie(wsk, liczba_elementow);
 }
+
+void MenuFloat::wyswietlanie_po_sortowaniu_wywolanie()
+{
+	wyswietlanie(wsk_kopia, liczba_elementow);
+}
+
+
+void MenuFloat::kopiowanie_tablicy_wywolanie()
+{
+	kopiowanie_tablicy(wsk, wsk_kopia, liczba_elementow);
+}
+
+
+void MenuFloat::sort_wstawianie_wywolanie()
+{
+
+	sort_wstawianie(wsk_kopia, liczba_elementow);
+
+
+
+
+}
+void MenuFloat::sort_kopcowanie_wywolanie() {
+
+
+	sort_kopcowanie(wsk_kopia, liczba_elementow);
+
+
+}
+//PIVOT LEWO
+
 void MenuFloat::quick_sort_wywolanie_Lp()
 {
 
+	quick_sort_Lp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
-int MenuFloat::quick_sort_podzial_Lp(int tab[], int poczatek, int koniec)
-{
-	return 0;
-}
 
-void MenuFloat::quick_sort_Lp(int tab[], int poczatek, int koniec)
-{
 
-}
-
+//PIVOT SRODEK
 void MenuFloat::quick_sort_wywolanie_Sp()
 {
 
-}
-int MenuFloat::quick_sort_podzial_Sp(int tab[], int poczatek, int koniec)
-{
-	return 0;
+	quick_sort_Sp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
-void MenuFloat::quick_sort_Sp(int tab[], int poczatek, int koniec)
-{
 
-}
+//PIVOT PRAWO
+
 void MenuFloat::quick_sort_wywolanie_Pp()
 {
 
-}
-int MenuFloat::quick_sort_podzial_Pp(int tab[], int poczatek, int koniec)
-{
-	return 0;
+	quick_sort_Pp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
-void MenuFloat::quick_sort_Pp(int tab[], int poczatek, int koniec)
-{
 
-}
+//PIVOT RANDOM
 
 void MenuFloat::quick_sort_wywolanie_Rp()
 {
 
-}
-int MenuFloat::quick_sort_podzial_Rp(int tab[], int poczatek, int koniec)
-{
-	return 0;
+	quick_sort_Rp(wsk_kopia, 0, liczba_elementow - 1);
 }
 
-void MenuFloat::quick_sort_Rp(int tab[], int poczatek, int koniec)
-{
 
+
+void MenuFloat::shell_v1_wywolanie()
+{
+	shell_v1(wsk_kopia, liczba_elementow);
 }
-void MenuFloat::shell_v1()
+void MenuFloat::shell_v2_wywolanie()
 {
-
-}
-void MenuFloat::shell_v2()
-{
-
+	shell_v2(wsk_kopia, liczba_elementow);
 }

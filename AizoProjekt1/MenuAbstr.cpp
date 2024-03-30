@@ -26,24 +26,26 @@ void MenuAbstr::menu(MenuAbstr& obj)
 		switch (x)
 		{
 		case 1:
-			obj.wczytwanie_z_pliku();
+			wczytwanie_tablicy_z_pliku();
 			break;
 		case 2:
 			generacja();
 			break;
 		case 3:
-			wyswietlanie_przed_sortowaniem();
+			wyswietlanie_przed_sortowaniem_wywolanie();
 			break;
 		case 4:
-			wyswietlanie_po_sortowaniu();
+			wyswietlanie_po_sortowaniu_wywolanie();
 			break;
 		case 5:
 			sort_menu(*this);
 			break;
-		
+		case 6:
+			sprawdzenie_poprawnosci_sortowania_wywolanie();
+			break;
 		case 7:
 			
-			wyjscie();
+			usuwanie_wywolanie();
 			return;
 
 		default:
@@ -121,12 +123,12 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 	{
 	case 1:
 		licznik.start();
-		obj.shell_v1();
+		obj.shell_v1_wywolanie();
 		licznik.stop();
 		break;
 	case 2:
 		licznik.start();
-		obj.shell_v2();
+		obj.shell_v2_wywolanie();
 		licznik.stop();
 		break;
 	case 3:
@@ -137,7 +139,7 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 void MenuAbstr::sort_menu(MenuAbstr& obj)
 {
 	LicznikCzasu licznik;
-	obj.zaladuj_ponownie_poprzednia_tablica();
+	obj.kopiowanie_tablicy_wywolanie();
 	printf("WYBIERZ TRYB SORTOWANIA\n");
 	printf("1.PRZEZ WSTAWIANIE\n");
 	printf("2.PRZEZ KOPCOWANIE\n");
@@ -153,14 +155,14 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 	case 1:
 	{
 		licznik.start();
-		obj.sort_wstawianie();
+		obj.sort_wstawianie_wywolanie();
 		licznik.stop();
 	}
 	break;
 	case 2:
 	{
 		licznik.start();
-		obj.sort_kopcowanie();
+		obj.sort_kopcowanie_wywolanie();
 		licznik.stop();
 	}
 	break;
@@ -182,5 +184,7 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 
 
 }
+
+
 
 
