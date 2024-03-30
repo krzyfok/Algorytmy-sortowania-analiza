@@ -51,7 +51,7 @@ void MenuChar::wczytwanie_tablicy_z_pliku()
 			}
 			else
 			{
-				wsk[i - 1] = stoi(wiersz);
+				wsk[i - 1] = wiersz[0];
 				wsk_kopia[i - 1] = wsk[i - 1];
 
 			}
