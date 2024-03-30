@@ -14,7 +14,8 @@ void MainMenu::main_menu() {
 		printf("2.FLOAT\n");
 		printf("3.DOUBLE\n");
 		printf("4.CHAR\n");
-		printf("5.WYJSCIE\n");
+		printf("5.TESTOWANIE\n");
+		printf("6.WYJSCIE\n");
 
 
 		int x;
@@ -48,7 +49,7 @@ void MainMenu::main_menu() {
 		}
 			break;
 
-		case 5:
+		case 6:
 			exit(0);
 			break;
 		default:

@@ -13,9 +13,9 @@ void LicznikCzasu::start()//milisekundy
     QueryPerformanceCounter(&li);
     CounterStart = li.QuadPart;
 }
- void LicznikCzasu::stop()
+ double LicznikCzasu::stop()
 {
     LARGE_INTEGER li;
     QueryPerformanceCounter(&li);
-    cout<< double(li.QuadPart - CounterStart) / PCFreq<<endl;
+    return double(li.QuadPart - CounterStart) / PCFreq;//milisekundy
 }

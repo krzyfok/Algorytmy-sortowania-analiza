@@ -77,7 +77,7 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 		
 			licznik.start();
 			obj.quick_sort_wywolanie_Lp();
-			licznik.stop();
+			cout << licznik.stop() <<" milisekund"<< endl;
 			break;
 		
 	}
@@ -85,21 +85,21 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 	{
 		licznik.start();
 		obj.quick_sort_wywolanie_Sp();
-		licznik.stop();
+		cout <<licznik.stop() << " milisekund" << endl;
 		break;
 	}
 	case 3:
 	{
 		licznik.start();
 		obj.quick_sort_wywolanie_Pp();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 		break;
 	}
 	case 4:
 	{
 		licznik.start();
 		obj.quick_sort_wywolanie_Rp();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 		break;
 	}
 	case 5: 
@@ -124,12 +124,12 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 	case 1:
 		licznik.start();
 		obj.shell_v1_wywolanie();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 		break;
 	case 2:
 		licznik.start();
 		obj.shell_v2_wywolanie();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 		break;
 	case 3:
 		return;
@@ -156,14 +156,14 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 	{
 		licznik.start();
 		obj.sort_wstawianie_wywolanie();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 	}
 	break;
 	case 2:
 	{
 		licznik.start();
 		obj.sort_kopcowanie_wywolanie();
-		licznik.stop();
+		cout<<licznik.stop() << " milisekund" << endl;
 	}
 	break;
 	case 3:
