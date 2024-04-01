@@ -2,11 +2,12 @@
 #include<random>
 #include "MenuChar.h"
 #include"MenuAbstr.h"
+#include"LicznikCzasu.h"
 
 using namespace std;
-int MenuChar::liczba_elementow = 0;
 char* MenuChar::wsk = nullptr; //wskaznik na dynamiczn� tablice
 char* MenuChar::wsk_kopia = nullptr;
+
 
 
 void MenuChar::generacja()
@@ -19,7 +20,7 @@ void MenuChar::generacja()
 	wsk_kopia = new char[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
-		wsk[i] = 'a'+rand()%26;
+		wsk[i] = '!'+rand()%222;
 		wsk_kopia[i] = wsk[i];
 
 	}
@@ -95,64 +96,72 @@ void MenuChar::kopiowanie_tablicy_wywolanie()
 }
 
 
-void MenuChar::sort_wstawianie_wywolanie()
+double MenuChar::sort_wstawianie_wywolanie()
 {
-
+	licznik.start();
 	sort_wstawianie(wsk_kopia, liczba_elementow);
-
+	return licznik.stop();
 
 
 
 }
-void MenuChar::sort_kopcowanie_wywolanie() {
+double MenuChar::sort_kopcowanie_wywolanie() {
 
-
+	licznik.start();
 	sort_kopcowanie(wsk_kopia, liczba_elementow);
-
+	return licznik.stop();
 
 }
 //PIVOT LEWO
 
-void MenuChar::quick_sort_wywolanie_Lp()
+double MenuChar::quick_sort_wywolanie_Lp()
 {
-
+	licznik.start();
 	quick_sort_Lp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 
 //PIVOT SRODEK
-void MenuChar::quick_sort_wywolanie_Sp()
+double MenuChar::quick_sort_wywolanie_Sp()
 {
-
+	licznik.start();
 	quick_sort_Sp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 //PIVOT PRAWO
 
-void MenuChar::quick_sort_wywolanie_Pp()
+double MenuChar::quick_sort_wywolanie_Pp()
 {
-
+	licznik.start();
 	quick_sort_Pp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 //PIVOT RANDOM
 
-void MenuChar::quick_sort_wywolanie_Rp()
+double MenuChar::quick_sort_wywolanie_Rp()
 {
-
+	licznik.start();
 	quick_sort_Rp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 
-void MenuChar::shell_v1_wywolanie()
+double MenuChar::shell_v1_wywolanie()
 {
+	licznik.start();
 	shell_v1(wsk_kopia, liczba_elementow);
+	return licznik.stop();
 }
-void MenuChar::shell_v2_wywolanie()
+double MenuChar::shell_v2_wywolanie()
 {
+	licznik.start();
 	shell_v2(wsk_kopia, liczba_elementow);
+	return licznik.stop();
 }

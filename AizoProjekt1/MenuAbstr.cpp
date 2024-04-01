@@ -5,7 +5,8 @@
 using namespace std;
 
 
-
+int MenuAbstr::liczba_elementow = 0;
+LicznikCzasu licznik;
 
 void MenuAbstr::menu(MenuAbstr& obj)
 {
@@ -32,13 +33,16 @@ void MenuAbstr::menu(MenuAbstr& obj)
 			generacja();
 			break;
 		case 3:
-			wyswietlanie_przed_sortowaniem_wywolanie();
+			if(liczba_elementow!=0)wyswietlanie_przed_sortowaniem_wywolanie();
+			else { cout << "BRAK ELEMENTOW" << endl; }
 			break;
 		case 4:
-			wyswietlanie_po_sortowaniu_wywolanie();
+			if(liczba_elementow!=0)	wyswietlanie_po_sortowaniu_wywolanie();
+			else { cout << "BRAK ELEMENTOW" << endl; }
 			break;
 		case 5:
-			sort_menu(*this);
+			if(liczba_elementow!=0)sort_menu(*this);
+			else { cout << "BRAK ELEMENTOW" << endl; }
 			break;
 		case 6:
 			sprawdzenie_poprawnosci_sortowania_wywolanie();
@@ -57,8 +61,6 @@ void MenuAbstr::menu(MenuAbstr& obj)
 }
 void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 {
-	
-	LicznikCzasu licznik;
 
 	printf("WYBIERZ MIEJSCE PIVOTA\n");
 	printf("1.LEWO\n");
@@ -75,31 +77,29 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 	case 1:
 	{
 		
-			licznik.start();
-			obj.quick_sort_wywolanie_Lp();
-			cout << licznik.stop() <<" milisekund"<< endl;
+			
+			
+			cout << obj.quick_sort_wywolanie_Lp() <<" milisekund"<< endl;
 			break;
 		
 	}
 	case 2:
 	{
-		licznik.start();
-		obj.quick_sort_wywolanie_Sp();
-		cout <<licznik.stop() << " milisekund" << endl;
+		
+		cout << obj.quick_sort_wywolanie_Sp() << " milisekund" << endl;
 		break;
 	}
 	case 3:
 	{
-		licznik.start();
-		obj.quick_sort_wywolanie_Pp();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		cout<< obj.quick_sort_wywolanie_Pp() << " milisekund" << endl;
 		break;
 	}
 	case 4:
 	{
-		licznik.start();
-		obj.quick_sort_wywolanie_Rp();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		
+		cout<< obj.quick_sort_wywolanie_Rp() << " milisekund" << endl;
 		break;
 	}
 	case 5: 
@@ -109,8 +109,6 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 
 void MenuAbstr::shell_menu(MenuAbstr& obj)
 {
-	LicznikCzasu licznik;
-
 	printf("WYBIERZ ALGORYTM\n");
 	printf("1.KLASYCZNY\n");
 	printf("2.5,3,1\n");
@@ -122,14 +120,14 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 	switch (x)
 	{
 	case 1:
-		licznik.start();
-		obj.shell_v1_wywolanie();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		
+		cout<< obj.shell_v1_wywolanie() << " milisekund" << endl;
 		break;
 	case 2:
-		licznik.start();
-		obj.shell_v2_wywolanie();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		
+		cout<< obj.shell_v2_wywolanie() << " milisekund" << endl;
 		break;
 	case 3:
 		return;
@@ -138,7 +136,6 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 }
 void MenuAbstr::sort_menu(MenuAbstr& obj)
 {
-	LicznikCzasu licznik;
 	obj.kopiowanie_tablicy_wywolanie();
 	printf("WYBIERZ TRYB SORTOWANIA\n");
 	printf("1.PRZEZ WSTAWIANIE\n");
@@ -154,16 +151,16 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 	{
 	case 1:
 	{
-		licznik.start();
-		obj.sort_wstawianie_wywolanie();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		
+		cout<< obj.sort_wstawianie_wywolanie() << " milisekund" << endl;
 	}
 	break;
 	case 2:
 	{
-		licznik.start();
-		obj.sort_kopcowanie_wywolanie();
-		cout<<licznik.stop() << " milisekund" << endl;
+		
+		
+		cout<< obj.sort_kopcowanie_wywolanie() << " milisekund" << endl;
 	}
 	break;
 	case 3:

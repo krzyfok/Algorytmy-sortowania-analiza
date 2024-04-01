@@ -5,7 +5,9 @@
 using namespace std;
 class MenuAbstr {
 public:
-
+	
+	static int liczba_elementow;
+	
 	void menu(MenuAbstr& obj);
 
 	template<class T>
@@ -296,28 +298,31 @@ public:
 	//wywolania szablonow
 	virtual void kopiowanie_tablicy_wywolanie() = 0;
 	virtual void sprawdzenie_poprawnosci_sortowania_wywolanie()=0;
-	virtual void sort_kopcowanie_wywolanie() = 0;
 	virtual void usuwanie_wywolanie() = 0;
 
 	virtual void wyswietlanie_przed_sortowaniem_wywolanie() = 0;
 	virtual void wyswietlanie_po_sortowaniu_wywolanie() = 0;
-	virtual void sort_wstawianie_wywolanie() = 0;
 
-	virtual void quick_sort_wywolanie_Lp()=0;
+
+	virtual double sort_wstawianie_wywolanie() = 0;
+
+	virtual double sort_kopcowanie_wywolanie() = 0;
+
+	virtual double quick_sort_wywolanie_Lp()=0;
 	
 	
-	virtual void quick_sort_wywolanie_Sp() = 0;
+	virtual double quick_sort_wywolanie_Sp() = 0;
 	
 	
-	virtual void quick_sort_wywolanie_Pp() = 0;
+	virtual double quick_sort_wywolanie_Pp() = 0;
 
 	
-	virtual void quick_sort_wywolanie_Rp() = 0;
+	virtual double quick_sort_wywolanie_Rp() = 0;
 	
 	
 	//SHELL Z ORGINALNYM KROKIEM
-	virtual void shell_v1_wywolanie() = 0;
+	virtual double shell_v1_wywolanie() = 0;
 	//SHELL 5 3 1
-	virtual void shell_v2_wywolanie() = 0;
+	virtual double shell_v2_wywolanie() = 0;
 };
 

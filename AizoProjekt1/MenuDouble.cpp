@@ -2,9 +2,9 @@
 #include<random>
 #include "MenuDouble.h"
 #include"MenuAbstr.h"
+#include"LicznikCzasu.h"
 
 using namespace std;
-int MenuDouble::liczba_elementow = 0;
 double* MenuDouble::wsk = nullptr; //wskaznik na dynamiczn� tablice
 double* MenuDouble::wsk_kopia = nullptr;
 
@@ -99,64 +99,72 @@ void MenuDouble::kopiowanie_tablicy_wywolanie()
 }
 
 
-void MenuDouble::sort_wstawianie_wywolanie()
+double MenuDouble::sort_wstawianie_wywolanie()
 {
-
+	licznik.start();
 	sort_wstawianie(wsk_kopia, liczba_elementow);
 
-
+	return licznik.stop();
 
 
 }
-void MenuDouble::sort_kopcowanie_wywolanie() {
+double MenuDouble::sort_kopcowanie_wywolanie() {
 
-
+	licznik.start();
 	sort_kopcowanie(wsk_kopia, liczba_elementow);
-
+	return licznik.stop();
 
 }
 //PIVOT LEWO
 
-void MenuDouble::quick_sort_wywolanie_Lp()
+double MenuDouble::quick_sort_wywolanie_Lp()
 {
-
+	licznik.start();
 	quick_sort_Lp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 
 //PIVOT SRODEK
-void MenuDouble::quick_sort_wywolanie_Sp()
+double MenuDouble::quick_sort_wywolanie_Sp()
 {
-
+	licznik.start();
 	quick_sort_Sp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 //PIVOT PRAWO
 
-void MenuDouble::quick_sort_wywolanie_Pp()
+double MenuDouble::quick_sort_wywolanie_Pp()
 {
-
+	licznik.start();
 	quick_sort_Pp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 //PIVOT RANDOM
 
-void MenuDouble::quick_sort_wywolanie_Rp()
+double MenuDouble::quick_sort_wywolanie_Rp()
 {
-
+	licznik.start();
 	quick_sort_Rp(wsk_kopia, 0, liczba_elementow - 1);
+	return licznik.stop();
 }
 
 
 
-void MenuDouble::shell_v1_wywolanie()
+double MenuDouble::shell_v1_wywolanie()
 {
+	licznik.start();
 	shell_v1(wsk_kopia, liczba_elementow);
+	return licznik.stop();
 }
-void MenuDouble::shell_v2_wywolanie()
+double MenuDouble::shell_v2_wywolanie()
 {
+	licznik.start();
 	shell_v2(wsk_kopia, liczba_elementow);
+	return licznik.stop();
 }
