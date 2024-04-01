@@ -8,10 +8,9 @@ float* MenuFloat::wsk = nullptr; //wskaznik na dynamiczn� tablice
 float* MenuFloat::wsk_kopia = nullptr;
 
 
-void MenuFloat::generacja()
+void MenuFloat::generacja(int liczba)
 {
-	cout << "Podaj liczbe elemntow: ";
-	cin >> liczba_elementow;
+	liczba_elementow = liczba;
 	wsk = new float[liczba_elementow];
 	wsk_kopia = new float[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci

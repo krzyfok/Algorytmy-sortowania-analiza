@@ -135,6 +135,7 @@
     <ClCompile Include="MenuDouble.cpp" />
     <ClCompile Include="MenuFloat.cpp" />
     <ClCompile Include="MenuInt.cpp" />
+    <ClCompile Include="Testowanie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LicznikCzasu.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="MenuDouble.h" />
     <ClInclude Include="MenuFloat.h" />
     <ClInclude Include="MenuInt.h" />
+    <ClInclude Include="Testowanie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

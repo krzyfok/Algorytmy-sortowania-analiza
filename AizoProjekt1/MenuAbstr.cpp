@@ -30,7 +30,7 @@ void MenuAbstr::menu(MenuAbstr& obj)
 			wczytwanie_tablicy_z_pliku();
 			break;
 		case 2:
-			generacja();
+			generacja(generacja_liczba_elementow());
 			break;
 		case 3:
 			if(liczba_elementow!=0)wyswietlanie_przed_sortowaniem_wywolanie();
@@ -180,6 +180,14 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 	}
 
 
+}
+
+int MenuAbstr::generacja_liczba_elementow()
+{
+	int liczba;
+	cout << "Podaj liczbe elemntow: ";
+	cin >> liczba;
+	return liczba;
 }
 
 

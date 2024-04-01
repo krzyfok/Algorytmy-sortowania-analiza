@@ -9,10 +9,9 @@ int* MenuInt::wsk = nullptr; //wskaznik na dynamiczn� tablice
 int* MenuInt::wsk_kopia = nullptr;
 
 
-void MenuInt:: generacja()
+void MenuInt:: generacja(int liczba)
 {
-	cout << "Podaj liczbe elemntow: ";
-	cin >> liczba_elementow;
+	liczba_elementow = liczba;
 	wsk = new int[liczba_elementow];
 	wsk_kopia = new int[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci

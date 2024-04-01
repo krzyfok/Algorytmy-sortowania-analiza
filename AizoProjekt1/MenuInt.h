@@ -10,7 +10,7 @@ private:
 
 public:
 	
-	void generacja() override;
+	void generacja(int liczba) override;
 	void wczytwanie_tablicy_z_pliku()override;
 	void  wyswietlanie_przed_sortowaniem_wywolanie() override;
 	void  wyswietlanie_po_sortowaniu_wywolanie()override;

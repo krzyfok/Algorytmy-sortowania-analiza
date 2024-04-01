@@ -5,6 +5,7 @@
 #include"MenuDouble.h"
 #include"MenuChar.h"
 #include"MenuAbstr.h"
+#include"Testowanie.h"
 using namespace std;
 void MainMenu::main_menu() {
 	while (true)
@@ -48,7 +49,10 @@ void MainMenu::main_menu() {
 
 		}
 			break;
-
+		case 5:
+			Testowanie test;
+			test.testowanie();
+			break;
 		case 6:
 			exit(0);
 			break;

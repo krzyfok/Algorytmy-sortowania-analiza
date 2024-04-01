@@ -9,7 +9,7 @@ double* MenuDouble::wsk = nullptr; //wskaznik na dynamiczn� tablice
 double* MenuDouble::wsk_kopia = nullptr;
 
 
-void MenuDouble::generacja()
+void MenuDouble::generacja(int liczba)
 {
 	const double dolna_granica = 0;
 	const double gorna_granica = 1000;
@@ -17,8 +17,7 @@ void MenuDouble::generacja()
 	random_device ran;
 	mt19937 rand_engine(ran());
 
-	cout << "Podaj liczbe elemntow: ";
-	cin >> liczba_elementow;
+	liczba_elementow = liczba;
 	wsk = new double[liczba_elementow];
 	wsk_kopia = new double[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci

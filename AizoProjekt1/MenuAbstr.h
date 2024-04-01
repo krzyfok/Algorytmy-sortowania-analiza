@@ -285,12 +285,12 @@ public:
 		cout << "POPRAWNE SORTOWANIE" << endl;
 	}
 	
-	virtual void generacja()=0;
+	virtual void generacja(int liczba)=0;
 	virtual void wczytwanie_tablicy_z_pliku() = 0;
 	void sort_menu(MenuAbstr& obj);
 	void qck_sort_menu(MenuAbstr& obj);
 	void shell_menu(MenuAbstr& obj);
-
+	int generacja_liczba_elementow();
 	
 
 

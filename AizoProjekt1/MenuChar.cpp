@@ -10,12 +10,9 @@ char* MenuChar::wsk_kopia = nullptr;
 
 
 
-void MenuChar::generacja()
+void MenuChar::generacja(int liczba)
 {
-	
-
-	cout << "Podaj liczbe elemntow: ";
-	cin >> liczba_elementow;
+	liczba_elementow = liczba;
 	wsk = new char[liczba_elementow];
 	wsk_kopia = new char[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
