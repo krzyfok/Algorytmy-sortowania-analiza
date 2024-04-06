@@ -10,6 +10,10 @@ private:
 public:
 
 	void generacja(int liczba) override;
+	void generacja_malejaco(int liczba) override;
+	void generacja_rosnaco(int liczba) override;
+	void generacja_33(int liczba) override;
+	void generacja_66(int liczba) override;
 	void wczytwanie_tablicy_z_pliku()override;
 	void  wyswietlanie_przed_sortowaniem_wywolanie() override;
 	void  wyswietlanie_po_sortowaniu_wywolanie()override;

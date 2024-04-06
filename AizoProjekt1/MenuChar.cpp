@@ -23,6 +23,98 @@ void MenuChar::generacja(int liczba)
 	}
 
 }
+void MenuChar::generacja_rosnaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new char[liczba_elementow];
+	wsk_kopia = new char[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		if (i < 222) {
+			wsk[i] = '!' + i;
+			wsk_kopia[i] = wsk[i];
+		}
+		else
+		{
+			wsk[i] = '!' +222;
+			wsk_kopia[i] = wsk[i];
+		}
+
+	}
+}
+void MenuChar::generacja_malejaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new char[liczba_elementow];
+	wsk_kopia = new char[liczba_elementow];
+	int przesuniecie = 222;
+	for (int i = 0; i < liczba_elementow; i++)
+	{	
+		wsk[i] = '!'+przesuniecie;
+		wsk_kopia[i] = wsk[i];
+		if (przesuniecie > 0) {
+			przesuniecie--;
+		}
+	}
+}
+
+void MenuChar::generacja_33(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new char[liczba_elementow];
+	wsk_kopia = new char[liczba_elementow];
+	int podzial = (liczba_elementow * 33) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+
+		if (i < 222) {
+			wsk[i] = '!' + i;
+			wsk_kopia[i] = wsk[i];
+		}
+		else
+		{
+			wsk[i] = '!'+222 ;
+			wsk_kopia[i] = wsk[i];
+		}
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+
+		wsk[i] = '!' + rand() % 222;
+		wsk_kopia[i] = wsk[i];;
+	}
+}
+
+void MenuChar::generacja_66(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new char[liczba_elementow];
+	wsk_kopia = new char[liczba_elementow];
+	int podzial = (liczba_elementow * 66) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+
+		if (i < 222) {
+			wsk[i] = '!' + i;
+			wsk_kopia[i] = wsk[i];
+		}
+		else
+		{
+			wsk[i] = '!' +222;
+			wsk_kopia[i] = wsk[i];
+		}
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+
+		wsk[i] = '!' + rand() % 222;
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
+
 void MenuChar::wczytwanie_tablicy_z_pliku()
 {
 

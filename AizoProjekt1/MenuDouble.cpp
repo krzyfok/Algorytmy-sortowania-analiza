@@ -28,6 +28,82 @@ void MenuDouble::generacja(int liczba)
 	}
 
 }
+void MenuDouble::generacja_rosnaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new double[liczba_elementow];
+	wsk_kopia = new double[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = double(i);
+		wsk_kopia[i] = double(i);
+
+	}
+}
+void MenuDouble::generacja_malejaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new double[liczba_elementow];
+	wsk_kopia = new double[liczba_elementow];
+	int k = liczba_elementow;
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = double(k);
+		wsk_kopia[i] = double(k);
+		k--;
+	}
+}
+
+void MenuDouble::generacja_33(int liczba)
+{
+	liczba_elementow = liczba;
+	const double dolna_granica = 0;
+	const double gorna_granica = 1000;
+	uniform_real_distribution<double>unif(dolna_granica, gorna_granica);
+	random_device ran;
+	mt19937 rand_engine(ran());
+	wsk = new double[liczba_elementow];
+	wsk_kopia = new double[liczba_elementow];
+	int podzial = (liczba_elementow * 33) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = double(i);
+		wsk_kopia[i] = double(i);
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = unif(rand_engine);
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
+void MenuDouble::generacja_66(int liczba)
+{
+	liczba_elementow = liczba;
+	const double dolna_granica = 0;
+	const double gorna_granica = 1000;
+	uniform_real_distribution<double>unif(dolna_granica, gorna_granica);
+	random_device ran;
+	mt19937 rand_engine(ran());
+	wsk = new double[liczba_elementow];
+	wsk_kopia = new double[liczba_elementow];
+	int podzial = (liczba_elementow * 66) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = double(i);
+		wsk_kopia[i] = double(i);
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = unif(rand_engine);
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
+
+
 void MenuDouble::wczytwanie_tablicy_z_pliku()
 {
 

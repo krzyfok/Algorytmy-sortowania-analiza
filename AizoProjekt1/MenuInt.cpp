@@ -10,7 +10,7 @@ int* MenuInt::wsk_kopia = nullptr;
 
 
 void MenuInt:: generacja(int liczba)
-{
+{liczba_elementow = liczba;
 	liczba_elementow = liczba;
 	wsk = new int[liczba_elementow];
 	wsk_kopia = new int[liczba_elementow];
@@ -18,10 +18,74 @@ void MenuInt:: generacja(int liczba)
 	{
 		wsk[i] = rand();
 		wsk_kopia[i] = wsk[i];
-		//wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
+		
 	}
 
 }
+void MenuInt::generacja_rosnaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new int[liczba_elementow];
+	wsk_kopia = new int[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = i;
+		wsk_kopia[i] = i;
+		
+	}
+}
+void MenuInt::generacja_malejaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new int[liczba_elementow];
+	wsk_kopia = new int[liczba_elementow];
+	int k = liczba_elementow;
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = k;
+		wsk_kopia[i] = k;
+		k--;
+	}
+}
+
+void MenuInt::generacja_33(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new int[liczba_elementow];
+	wsk_kopia = new int[liczba_elementow];
+	int podzial = (liczba_elementow*33)/100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = i;
+		wsk_kopia[i] = i;
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = rand();
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
+void MenuInt::generacja_66(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new int[liczba_elementow];
+	wsk_kopia = new int[liczba_elementow];
+	int podzial = (liczba_elementow * 66) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = i;
+		wsk_kopia[i] = i;
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = rand();
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
 void MenuInt::wczytwanie_tablicy_z_pliku()
 {
 

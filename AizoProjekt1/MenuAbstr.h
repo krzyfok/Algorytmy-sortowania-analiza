@@ -61,7 +61,7 @@ public:
 	 template<class T>
 	 void shell_v2(T tab[], int liczba_elementow)
 	 {
-		 for (int krok = 5; krok > 0; krok = krok - 2)
+		 for (int krok = 21; krok > 0; krok = krok - 5)
 		 {
 			 for (int i = krok; i < liczba_elementow; i++)
 			 {
@@ -286,6 +286,10 @@ public:
 	}
 	
 	virtual void generacja(int liczba)=0;
+	virtual void generacja_malejaco(int liczba) = 0;
+	virtual void generacja_rosnaco(int liczba) = 0;
+	virtual void generacja_33(int liczba) = 0;
+	virtual void generacja_66(int liczba) = 0;
 	virtual void wczytwanie_tablicy_z_pliku() = 0;
 	void sort_menu(MenuAbstr& obj);
 	void qck_sort_menu(MenuAbstr& obj);

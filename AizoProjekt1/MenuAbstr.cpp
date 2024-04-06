@@ -111,7 +111,7 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 {
 	printf("WYBIERZ ALGORYTM\n");
 	printf("1.KLASYCZNY\n");
-	printf("2.5,3,1\n");
+	printf("2.21,16,11,6,1\n");
 	printf("3.COFNIJ\n");
 
 

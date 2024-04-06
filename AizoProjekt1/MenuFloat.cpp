@@ -17,9 +17,72 @@ void MenuFloat::generacja(int liczba)
 	{
 		wsk[i] = (float)(rand()) / (float)(rand());
 		wsk_kopia[i] = wsk[i];
-		//wsk_kopia[i] = wsk[i]; //sortowanie przeprowadzane na tablicy wsk_kopia
+		
 	}
 
+}
+void MenuFloat::generacja_rosnaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new float[liczba_elementow];
+	wsk_kopia = new float[liczba_elementow];
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = float(i);
+		wsk_kopia[i] = float(i);
+
+	}
+}
+void MenuFloat::generacja_malejaco(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new float[liczba_elementow];
+	wsk_kopia = new float[liczba_elementow];
+	int k = liczba_elementow;
+	for (int i = 0; i < liczba_elementow; i++)
+	{
+		wsk[i] = float(k);
+		wsk_kopia[i] = float(k);
+		k--;
+	}
+}
+
+void MenuFloat::generacja_33(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new float[liczba_elementow];
+	wsk_kopia = new float[liczba_elementow];
+	int podzial = (liczba_elementow * 33) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = float(i);
+		wsk_kopia[i] = float(i);
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = (float)(rand()) / (float)(rand());
+		wsk_kopia[i] = wsk[i];
+	}
+}
+
+void MenuFloat::generacja_66(int liczba)
+{
+	liczba_elementow = liczba;
+	wsk = new float[liczba_elementow];
+	wsk_kopia = new float[liczba_elementow];
+	int podzial = (liczba_elementow * 66) / 100;
+
+	for (int i = 0; i < podzial; i++)
+	{
+		wsk[i] = float(i);
+		wsk_kopia[i] = float(i);
+	}
+	for (int i = podzial; i < liczba_elementow; i++)
+	{
+		wsk[i] = (float)(rand()) / (float)(rand());
+		wsk_kopia[i] = wsk[i];
+	}
 }
 void MenuFloat::wczytwanie_tablicy_z_pliku()
 {
