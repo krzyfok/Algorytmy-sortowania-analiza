@@ -11,15 +11,13 @@ float* MenuFloat::wsk_kopia = nullptr;
 void MenuFloat::generacja(int liczba)
 {
 	liczba_elementow = liczba;
-	wsk = new float[liczba_elementow];
-	wsk_kopia = new float[liczba_elementow];
+	wsk = new float[liczba_elementow];//utworzenie dynamicznej tablicy
+	wsk_kopia = new float[liczba_elementow];//tablica do przeprowadzania sortowania
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
-		wsk[i] = (float)(rand()) / (float)(rand());
-		wsk_kopia[i] = wsk[i];
-		
+		wsk[i] = (float)(rand()) / (float)(rand());//podział 2 liczb float przez siebie
+		wsk_kopia[i] = wsk[i];//skopiowanie wartosci do drugiej tablicy
 	}
-
 }
 void MenuFloat::generacja_rosnaco(int liczba)
 {

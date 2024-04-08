@@ -11,22 +11,20 @@ double* MenuDouble::wsk_kopia = nullptr;
 
 void MenuDouble::generacja(int liczba)
 {
-	const double dolna_granica = 0;
-	const double gorna_granica = 1000;
-	uniform_real_distribution<double>unif(dolna_granica, gorna_granica);
-	random_device ran;
-	mt19937 rand_engine(ran());
+	const double dolna_granica = 0;//deklaracja stałej dolnej granicy
+	const double gorna_granica = 1000;//deklaracja stałej górnej granicy
+	uniform_real_distribution<double>unif(dolna_granica, gorna_granica);// Inicjalizacja obiektu uniform_real_distribution zdefiniowanego dla przedziału [0, 1000], zapewnia on równomierne rozłożenie liczb z przedziału
+	random_device ran;// Inicjalizacja obiektu random_device do generowania ziarna losowości
+	mt19937 rand_engine(ran());// Inicjalizacja generatora liczb losowych mt19937 z ziarnem uzyskanym z random_device
 
 	liczba_elementow = liczba;
 	wsk = new double[liczba_elementow];
 	wsk_kopia = new double[liczba_elementow];
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
-		wsk[i] = unif(rand_engine);
+		wsk[i] = unif(rand_engine);// Generowanie losowej liczby zmiennoprzecinkowej z przedziału [0, 1000]
 		wsk_kopia[i] = wsk[i];
-		
 	}
-
 }
 void MenuDouble::generacja_rosnaco(int liczba)
 {

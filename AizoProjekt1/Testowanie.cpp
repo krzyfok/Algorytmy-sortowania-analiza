@@ -71,7 +71,7 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 
 		obj.generacja_rosnaco(wielkosc_tablicy);
-		czas_int = obj.quick_sort_wywolanie_Rp();
+		czas_int = obj.quick_sort_wywolanie_Sp();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}
@@ -161,7 +161,7 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 
 		obj.generacja_33(wielkosc_tablicy);
-		czas_int = obj.quick_sort_wywolanie_Lp();
+		czas_int = obj.quick_sort_wywolanie_Sp();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}
@@ -207,7 +207,7 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 
 		obj.generacja_66(wielkosc_tablicy);
-		czas_int = obj.quick_sort_wywolanie_Lp();
+		czas_int = obj.quick_sort_wywolanie_Sp();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}

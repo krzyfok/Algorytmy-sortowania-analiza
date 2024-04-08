@@ -13,20 +13,19 @@ public:
 	template<class T>
 	 void sort_wstawianie(T tab[], int liczba_elementow)
 	{
-		int k;//obecnie por�wnywany elemtn 
-		T liczba;//por�wnywany elemnt
-
+		T liczba;//porównywany element
+		int k;//poprzedni element
+		
 		for (int i = 1; i < liczba_elementow; i++)
 		{
 			k = i - 1;
-			liczba = tab[i];
-			while (k >= 0 && tab[k] > liczba)
+			liczba = tab[i];//wybranie wartosci obecnie sortowanej
+			while (k >= 0 && tab[k] > liczba)//przesuwanie wartosci w lewo aż obecna liczba będzie nie większa od wartosci z którą jest porównywana, lub do końca tabeli
 			{
-				tab[k + 1] = tab[k];
-
+				tab[k + 1] = tab[k];//przesunięcie wartości poprzedniej o indeks do przodu, by zrobić miejsce dla wartosci obecnie sortowanej
 				k--;
 			}
-			tab[k + 1] = liczba;
+			tab[k + 1] = liczba; //po wyjsciu z pętli i znalezieniu odpoweiniej pozycji nastęuje przypisanie wartosci sortowanej do tej pozycji
 		}
 	}
 	 template<class T>
@@ -43,18 +42,17 @@ public:
 	 template<class T>
 	 void shell_v1(T tab[], int liczba_elementow)
 	 {
-		 for (int krok = liczba_elementow / 2; krok > 0; krok = krok / 2)
+		 for (int krok = liczba_elementow/2; krok > 0; krok = krok / 2)//ustalenie obecnego kroku
 		 {
 			 for (int i = krok; i < liczba_elementow; i++)
 			 {
 				 int j;
-				 T element_sprawdzany = tab[i];
-				 for (j = i; j >= krok && tab[j - krok] > element_sprawdzany; j = j - krok)
+				 T element_sprawdzany = tab[i];//wybranie obecnie sortowanego elementu
+				 for (j = i; j >= krok && tab[j - krok] > element_sprawdzany; j = j - krok)//porówynwanie elmentu sortowanego z elementem o mniejszym indeksie oddalonym o krok, przesuwanie w lewo aż znajdzie sie element nie mniejszy
 				 {
-					 tab[j] = tab[j - krok];
-
+					 tab[j] = tab[j - krok];//zrobienie miejsca dla wartosci sortowanej
 				 }
-				 tab[j] = element_sprawdzany;
+				 tab[j] = element_sprawdzany;//wpisanie  elementu na własciwą pozycje
 			 }
 		 }
 	 }
@@ -80,22 +78,22 @@ public:
 	 template<class T>
 	 int quick_sort_podzial_Lp(T tab[], int poczatek, int koniec)
 	 {
-		 T pivot = tab[poczatek];
+		 T pivot = tab[poczatek]; //wybranie lewej skranej wartości jako pivota
 		 int l = poczatek;
 		 int r = koniec;
 		 while (true)
 		 {
-			 while (tab[l] < pivot)l++;
-			 while (tab[r] > pivot)r--;
-			 if (r > l)
+			 while (tab[l] < pivot)l++;//przesuwanie l w prawo aż znajdzie wartość nie mniejszą od pivota
+			 while (tab[r] > pivot)r--;//przesuwanie r w lewo aż znajdzie wartosć nie większą od pivot
+			 if (r > l)//sprawdzenie czy nie nastąpiło minięcie
 			 {
-				 swap(tab[l], tab[r]);
+				 swap(tab[l], tab[r]);//zamiana wartosci z indeksów l i r
 				 r--;
 				 l++;
 			 }
 			 else {
 				 if (r == koniec)r--;
-				 return r;
+				 return r;//jeżeli nastąpiło minięcie zwaracana jest wartość r
 			 }
 		 }
 	 }
@@ -103,13 +101,13 @@ public:
 	 template<class T>
 	 void quick_sort_Lp(T tab[], int poczatek, int koniec)
 	 {
-		 if (poczatek >= koniec)
-	{
-		return;
-	}
-	int polowa = quick_sort_podzial_Lp(tab, poczatek, koniec);
-	quick_sort_Lp(tab, poczatek, polowa);
-	quick_sort_Lp(tab, polowa + 1, koniec);
+		 if (poczatek >= koniec)//sprawdzenie czy funkcja nie została wywołana na pojedynczym elemencie
+		{
+			return;
+		}
+		int polowa = quick_sort_podzial_Lp(tab, poczatek, koniec);//wywołanie funkcji podziału na 2 tablice
+		quick_sort_Lp(tab, poczatek, polowa);//wywołanie funkcji quick_sort_Lp dla kolejnych 2 tablic
+		quick_sort_Lp(tab, polowa + 1, koniec);
 	 }
 
 
@@ -221,22 +219,22 @@ public:
 	 template<class T>
 	 void sort_kopcowanie(T tab[], int liczba_elementow)
 	 {
-		 for (int i = liczba_elementow / 2 - 1; i >= 0; i--) naprawa_kopca(i, liczba_elementow,tab);
+		 for (int i = liczba_elementow / 2 - 1; i >= 0; i--) naprawa_kopca(i, liczba_elementow,tab);//utworzenie kopca
 
 		 for (int i = liczba_elementow - 1; i > 0; i--)
 		 {
-			 swap(tab[0], tab[i]);
-			 naprawa_kopca(0, i,tab);
+			 swap(tab[0], tab[i]);//zamiana korzenia kopca z ostanim elementem w tablicy, nie będzie on brany pod uwage przy kolejnej iteracji
+			 naprawa_kopca(0, i,tab);//naprawa kopca w dół
 		 }
 	 }
-	
+
 	 template<class T>
 	 void naprawa_kopca(int korzen, int rozmiar, T tab[])
 	 {
 		 int rodzic = korzen;
-		 int prawe_dziecko = 2 * rodzic + 1;
+		 int prawe_dziecko = 2 * rodzic + 1;//wyznaczenie indeksow dzieci dla rodzica
 		 int lewe_dziecko = 2 * rodzic + 2;
-		 if (lewe_dziecko < rozmiar && tab[lewe_dziecko]> tab[rodzic])
+		 if (lewe_dziecko < rozmiar && tab[lewe_dziecko]> tab[rodzic])//sprawdzenie potrzeby zamiany
 		 {
 			 rodzic = lewe_dziecko;
 		 }
@@ -246,8 +244,8 @@ public:
 		 }
 		 if (rodzic != korzen)
 		 {
-			 swap(tab[korzen],tab[rodzic]);
-			 naprawa_kopca(rodzic, rozmiar,tab);
+			 swap(tab[korzen],tab[rodzic]);//zamiana dziecka i rodzica, jeżeli dziecko jest większe od rodzica
+			 naprawa_kopca(rodzic, rozmiar,tab);//kontynuacja naprawy w doł
 		 }
 	 }
 

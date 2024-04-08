@@ -12,15 +12,13 @@ int* MenuInt::wsk_kopia = nullptr;
 void MenuInt:: generacja(int liczba)
 {liczba_elementow = liczba;
 	liczba_elementow = liczba;
-	wsk = new int[liczba_elementow];
-	wsk_kopia = new int[liczba_elementow];
+	wsk = new int[liczba_elementow];//utworzenie dynamicznej tablicy
+	wsk_kopia = new int[liczba_elementow];//tablica do przeprowadzania sortowania
 	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
 	{
-		wsk[i] = rand();
-		wsk_kopia[i] = wsk[i];
-		
+		wsk[i] = rand();//generacja losowej liczby int
+		wsk_kopia[i] = wsk[i];//skopiowanie wartosci do drugiej tablicy	
 	}
-
 }
 void MenuInt::generacja_rosnaco(int liczba)
 {

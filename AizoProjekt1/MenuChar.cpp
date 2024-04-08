@@ -13,15 +13,13 @@ char* MenuChar::wsk_kopia = nullptr;
 void MenuChar::generacja(int liczba)
 {
 	liczba_elementow = liczba;
-	wsk = new char[liczba_elementow];
-	wsk_kopia = new char[liczba_elementow];
-	for (int i = 0; i < liczba_elementow; i++)//generacja losowych wartosci
+	wsk = new char[liczba_elementow];//utworzenie dynamicznej tablicy
+	wsk_kopia = new char[liczba_elementow];//tablica do przeprowadzania sortowania
+	for (int i = 0; i < liczba_elementow; i++)
 	{
-		wsk[i] = '!'+rand()%222;
-		wsk_kopia[i] = wsk[i];
-
+		wsk[i] = '!'+rand()%222;//generaacja losowych zanków ascii
+		wsk_kopia[i] = wsk[i];//skopiowanie wartosci do drugiej tablicy
 	}
-
 }
 void MenuChar::generacja_rosnaco(int liczba)
 {
