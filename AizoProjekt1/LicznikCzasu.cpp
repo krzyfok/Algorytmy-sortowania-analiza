@@ -2,7 +2,7 @@
 #include"windows.h"
 using namespace std;
 #include<iostream>
-void LicznikCzasu::start()//milisekundy
+void LicznikCzasu::start()//rozpoczêcie liczenia
 {
     LARGE_INTEGER li;
     if (!QueryPerformanceFrequency(&li))
@@ -13,9 +13,9 @@ void LicznikCzasu::start()//milisekundy
     QueryPerformanceCounter(&li);
     CounterStart = li.QuadPart;
 }
- double LicznikCzasu::stop()
+ double LicznikCzasu::stop()//zakonczenie liczenia
 {
     LARGE_INTEGER li;
     QueryPerformanceCounter(&li);
-    return double(li.QuadPart - CounterStart) / PCFreq;//milisekundy
+    return double(li.QuadPart - CounterStart) / PCFreq;//wynik w milisekundach
 }

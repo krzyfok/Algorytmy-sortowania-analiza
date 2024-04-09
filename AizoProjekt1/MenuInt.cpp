@@ -102,14 +102,14 @@ void MenuInt::wczytwanie_tablicy_z_pliku()
 			plik >> wiersz;
 			if (i == 0)
 			{
-				liczba_elementow = stoi(wiersz);
+				liczba_elementow = stoi(wiersz);//zamiana na int i załadowanie wielkosci tabeli
 				wsk = new int[liczba_elementow];
 				wsk_kopia = new int[liczba_elementow];
 
 			}
 			else
 			{
-				wsk[i - 1] = stoi(wiersz);
+				wsk[i - 1] = stoi(wiersz);//zamiana na int i wczytanie do tabeli
 				wsk_kopia[i - 1] = wsk[i - 1];
 
 			}

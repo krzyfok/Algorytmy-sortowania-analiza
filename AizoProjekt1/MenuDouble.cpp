@@ -121,14 +121,14 @@ void MenuDouble::wczytwanie_tablicy_z_pliku()
 			plik >> wiersz;
 			if (i == 0)
 			{
-				liczba_elementow = stoi(wiersz);
+				liczba_elementow = stoi(wiersz);//zamiana pierwszego wiersza na int i utworzenie tabeli
 				wsk = new double[liczba_elementow];
 				wsk_kopia = new double[liczba_elementow];
 
 			}
 			else
 			{
-				wsk[i - 1] = stod(wiersz);
+				wsk[i - 1] = stod(wiersz);//zamian wiersza na double i wstawienie do tabeli
 				wsk_kopia[i - 1] = wsk[i - 1];
 
 			}

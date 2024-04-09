@@ -8,7 +8,7 @@ using namespace std;
 int MenuAbstr::liczba_elementow = 0;
 LicznikCzasu licznik;
 
-void MenuAbstr::menu(MenuAbstr& obj)
+void MenuAbstr::menu(MenuAbstr& obj)//menu głowne
 {
 	
 	while (true)
@@ -59,7 +59,7 @@ void MenuAbstr::menu(MenuAbstr& obj)
 	}
 
 }
-void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
+void MenuAbstr::qck_sort_menu(MenuAbstr& obj)//menu wyboru pivota
 {
 
 	printf("WYBIERZ MIEJSCE PIVOTA\n");
@@ -107,7 +107,7 @@ void MenuAbstr::qck_sort_menu(MenuAbstr& obj)
 	}
 }
 
-void MenuAbstr::shell_menu(MenuAbstr& obj)
+void MenuAbstr::shell_menu(MenuAbstr& obj)//menu wyboru korku shella
 {
 	printf("WYBIERZ ALGORYTM\n");
 	printf("1.KLASYCZNY\n");
@@ -134,7 +134,7 @@ void MenuAbstr::shell_menu(MenuAbstr& obj)
 	}
 
 }
-void MenuAbstr::sort_menu(MenuAbstr& obj)
+void MenuAbstr::sort_menu(MenuAbstr& obj)//podmenu do wyboru sortowania
 {
 	obj.kopiowanie_tablicy_wywolanie();
 	printf("WYBIERZ TRYB SORTOWANIA\n");
@@ -182,7 +182,7 @@ void MenuAbstr::sort_menu(MenuAbstr& obj)
 
 }
 
-int MenuAbstr::generacja_liczba_elementow()
+int MenuAbstr::generacja_liczba_elementow()//wywolanie generacji
 {
 	int liczba;
 	cout << "Podaj liczbe elemntow: ";

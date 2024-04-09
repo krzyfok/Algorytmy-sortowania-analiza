@@ -132,14 +132,14 @@ void MenuChar::wczytwanie_tablicy_z_pliku()
 			plik >> wiersz;
 			if (i == 0)
 			{
-				liczba_elementow = stoi(wiersz);
+				liczba_elementow = stoi(wiersz);//zamiana pierwszego wiersza na int i stworzenie tabeli
 				wsk = new char[liczba_elementow];
 				wsk_kopia = new char[liczba_elementow];
 
 			}
 			else
 			{
-				wsk[i - 1] = wiersz[0];
+				wsk[i - 1] = wiersz[0];//załadowanie znaków z wierszy do tabeli
 				wsk_kopia[i - 1] = wsk[i - 1];
 
 			}

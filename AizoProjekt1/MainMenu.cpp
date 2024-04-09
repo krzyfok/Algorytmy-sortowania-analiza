@@ -23,7 +23,7 @@ void MainMenu::main_menu() {
 		cin >> x;
 		switch (x)
 		{
-		case 1:
+		case 1://stworzenie obiektu wybranej klasy i wywolanie menu
 		{
 			MenuInt menu_i;
 			menu_i.menu(menu_i);

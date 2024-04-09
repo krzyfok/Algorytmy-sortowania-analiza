@@ -282,16 +282,18 @@ public:
 		}
 		cout << "POPRAWNE SORTOWANIE" << endl;
 	}
-	
+	//deklaracje metod wirtulanych
 	virtual void generacja(int liczba)=0;
 	virtual void generacja_malejaco(int liczba) = 0;
 	virtual void generacja_rosnaco(int liczba) = 0;
 	virtual void generacja_33(int liczba) = 0;
 	virtual void generacja_66(int liczba) = 0;
 	virtual void wczytwanie_tablicy_z_pliku() = 0;
+	//metody menu
 	void sort_menu(MenuAbstr& obj);
 	void qck_sort_menu(MenuAbstr& obj);
 	void shell_menu(MenuAbstr& obj);
+	//generacja
 	int generacja_liczba_elementow();
 	
 

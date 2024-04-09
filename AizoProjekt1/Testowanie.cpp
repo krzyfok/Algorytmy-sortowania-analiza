@@ -14,7 +14,7 @@ void Testowanie :: testowanie()
 	cout << "PRZYPADKI SKRAJNE:" << endl;
 
 	cout << "CHAR: " << endl;
-	//szczegolne(c_);
+	szczegolne(c_);
 	cout << "INT: " << endl;
 	szczegolne(i_);
 	cout << "float: " << endl;
@@ -24,14 +24,14 @@ void Testowanie :: testowanie()
 
 
 
-	//cout << "CHAR: " << endl;
-	//test_szablon(c_);
-	//cout << "INT: " << endl;
-	//test_szablon(i_);
-	//cout << "float: " << endl;
-	//test_szablon(f_);
-	//cout << "DOUBLE: " << endl;
-	//test_szablon(d_);
+	cout << "CHAR: " << endl;
+	test_szablon(c_);
+	cout << "INT: " << endl;
+	test_szablon(i_);
+	cout << "float: " << endl;
+	test_szablon(f_);
+	cout << "DOUBLE: " << endl;
+	test_szablon(d_);
 }
 
 
@@ -229,17 +229,15 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 }
 void Testowanie::test_szablon(MenuAbstr& obj)
 {
-	int skok = 100;
 	int wielkosc_start = 10000;
 	double czas_int = 0;
-	int wielkosc_tablicy = 100;
+	int wielkosc_tablicy = 0;
 
 	cout << "KOPCOWANIE: " << endl;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
 
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-		//wielkosc_tablicy = wielkosc_start + k * skok;
+	
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -258,8 +256,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
 
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-		//wielkosc_tablicy = wielkosc_start + k * skok;
+	
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -275,8 +272,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	wielkosc_tablicy = 100;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-				//wielkosc_tablicy = wielkosc_start + k * skok;
+	
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -291,8 +287,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	cout << "QUICK SORT: " << endl;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-		//wielkosc_tablicy = wielkosc_start + k * skok;
+
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -306,8 +301,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	}wielkosc_tablicy = 100;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-			//wielkosc_tablicy = wielkosc_start + k * skok;
+		
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -322,8 +316,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
 
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-		//wielkosc_tablicy = wielkosc_start + k * skok;
+		
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -339,8 +332,6 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
 
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-			//wielkosc_tablicy = wielkosc_start + k * skok;
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{
@@ -356,8 +347,7 @@ void Testowanie::test_szablon(MenuAbstr& obj)
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
 
-		//wielkosc_tablicy = wielkosc_tablicy * k;
-		//wielkosc_tablicy = wielkosc_start + k * skok;
+
 		wielkosc_tablicy = wielkosc_start * pow(2, k);
 		for (int i = 0; i < 100; i++)
 		{

@@ -108,7 +108,7 @@ void MenuFloat::wczytwanie_tablicy_z_pliku()
 				}
 				else
 				{
-					wsk[i - 1] = stof(wiersz);
+					wsk[i - 1] = stof(wiersz);//zamian ana float i wstawienie do tabeli
 					wsk_kopia[i - 1] = wsk[i - 1];
 
 				}
