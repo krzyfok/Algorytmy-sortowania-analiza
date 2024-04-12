@@ -59,7 +59,7 @@ void MenuFloat::generacja_33(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = (float)(rand()) / (float)(rand());
+		wsk[i] = ((float)(rand()) / (float)(rand()))+float(podzial);
 		wsk_kopia[i] = wsk[i];
 	}
 }
@@ -78,7 +78,7 @@ void MenuFloat::generacja_66(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = (float)(rand()) / (float)(rand());
+		wsk[i] = ((float)(rand()) / (float)(rand()))+float(podzial);
 		wsk_kopia[i] = wsk[i];
 	}
 }

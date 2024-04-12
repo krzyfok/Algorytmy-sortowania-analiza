@@ -35,7 +35,6 @@ void MenuDouble::generacja_rosnaco(int liczba)
 	{
 		wsk[i] = double(i);
 		wsk_kopia[i] = double(i);
-
 	}
 }
 void MenuDouble::generacja_malejaco(int liczba)
@@ -71,7 +70,7 @@ void MenuDouble::generacja_33(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = unif(rand_engine);
+		wsk[i] = unif(rand_engine)+double(podzial);
 		wsk_kopia[i] = wsk[i];
 	}
 }
@@ -95,7 +94,7 @@ void MenuDouble::generacja_66(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = unif(rand_engine);
+		wsk[i] = unif(rand_engine)+double(podzial);
 		wsk_kopia[i] = wsk[i];
 	}
 }

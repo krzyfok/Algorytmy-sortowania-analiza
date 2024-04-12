@@ -45,7 +45,7 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 	cout << "KOPCOWANIE:" << endl;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
-		wielkosc_tablicy = wielkosc_start * pow(2, k);
+	  wielkosc_tablicy = wielkosc_start * pow(2, k);
 
 
 		obj.generacja_rosnaco(wielkosc_tablicy);
@@ -61,6 +61,17 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 		obj.generacja_rosnaco(wielkosc_tablicy);
 		czas_int = obj.shell_v1_wywolanie();
+		obj.usuwanie_wywolanie();
+		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
+	}
+	cout << "SHELLv2:" << endl;
+	for (int k = 0; k < 7; k++) {
+		czas_int = 0;
+		wielkosc_tablicy = wielkosc_start * pow(2, k);
+
+
+		obj.generacja_rosnaco(wielkosc_tablicy);
+		czas_int = obj.shell_v2_wywolanie();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}
@@ -109,6 +120,18 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}
+	cout << "SHELLv2:" << endl;
+	for (int k = 0; k < 7; k++) {
+		czas_int = 0;
+		wielkosc_tablicy = wielkosc_start * pow(2, k);
+
+
+		obj.generacja_malejaco(wielkosc_tablicy);
+		czas_int = obj.shell_v2_wywolanie();
+		obj.usuwanie_wywolanie();
+		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
+	}
+
 	cout << "QUICK:" << endl;
 	for (int k = 0; k < 7; k++) {
 		czas_int = 0;
@@ -151,6 +174,17 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 		obj.generacja_33(wielkosc_tablicy);
 		czas_int = obj.shell_v1_wywolanie();
+		obj.usuwanie_wywolanie();
+		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
+	}
+	cout << "SHELLv2:" << endl;
+	for (int k = 0; k < 7; k++) {
+		czas_int = 0;
+		wielkosc_tablicy = wielkosc_start * pow(2, k);
+
+
+		obj.generacja_33(wielkosc_tablicy);
+		czas_int = obj.shell_v2_wywolanie();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}
@@ -197,6 +231,17 @@ void Testowanie::szczegolne(MenuAbstr& obj)
 
 		obj.generacja_66(wielkosc_tablicy);
 		czas_int = obj.shell_v1_wywolanie();
+		obj.usuwanie_wywolanie();
+		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
+	}
+	cout << "SHELL2:" << endl;
+	for (int k = 0; k < 7; k++) {
+		czas_int = 0;
+		wielkosc_tablicy = wielkosc_start * pow(2, k);
+
+
+		obj.generacja_66(wielkosc_tablicy);
+		czas_int = obj.shell_v2_wywolanie();
 		obj.usuwanie_wywolanie();
 		cout << wielkosc_tablicy << " elementow: " << czas_int << " milisekund" << endl;
 	}

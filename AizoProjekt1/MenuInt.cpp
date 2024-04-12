@@ -60,7 +60,7 @@ void MenuInt::generacja_33(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = rand();
+		wsk[i] = rand()+podzial;
 		wsk_kopia[i] = wsk[i];
 	}
 }
@@ -79,7 +79,7 @@ void MenuInt::generacja_66(int liczba)
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-		wsk[i] = rand();
+		wsk[i] = rand()+podzial;
 		wsk_kopia[i] = wsk[i];
 	}
 }

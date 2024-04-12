@@ -66,20 +66,15 @@ void MenuChar::generacja_33(int liczba)
 	for (int i = 0; i < podzial; i++)
 	{
 
-		if (i < 222) {
-			wsk[i] = '!' + i;
+			wsk[i] = '!';
 			wsk_kopia[i] = wsk[i];
-		}
-		else
-		{
-			wsk[i] = '!'+222 ;
-			wsk_kopia[i] = wsk[i];
-		}
+		
+		
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
 
-		wsk[i] = '!' + rand() % 222;
+		wsk[i] = '!' + (rand() % 221)+1;
 		wsk_kopia[i] = wsk[i];;
 	}
 }
@@ -93,21 +88,12 @@ void MenuChar::generacja_66(int liczba)
 
 	for (int i = 0; i < podzial; i++)
 	{
-
-		if (i < 222) {
-			wsk[i] = '!' + i;
+			wsk[i] = '!';
 			wsk_kopia[i] = wsk[i];
-		}
-		else
-		{
-			wsk[i] = '!' +222;
-			wsk_kopia[i] = wsk[i];
-		}
 	}
 	for (int i = podzial; i < liczba_elementow; i++)
 	{
-
-		wsk[i] = '!' + rand() % 222;
+		wsk[i] = ('!' + rand() % 221)+1;
 		wsk_kopia[i] = wsk[i];
 	}
 }

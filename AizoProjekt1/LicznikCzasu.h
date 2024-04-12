@@ -3,7 +3,7 @@ class LicznikCzasu {
 public:
 	void start();
 	double stop();
-	double PCFreq = 0.0; //Stackoverflow
+	double PCFreq = 0.0;
 	__int64 CounterStart = 0;
 	
 };
