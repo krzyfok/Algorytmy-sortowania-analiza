@@ -1,4 +1,4 @@
-# Algorytmy-sortowania-analiza
+# Sorting Algorithms Analysis
 
 Analysis and Comparison of Sorting Algorithms Performance Based on Input Data Types.
 
