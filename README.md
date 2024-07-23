@@ -5,10 +5,10 @@ Analysis and Comparison of Sorting Algorithms Performance Based on Input Data Ty
 
 ## Algorithms
 
--Insertion Sort
--Shellsort
--Quicksort
--Heapsort
+- Insertion Sort
+- Shellsort
+- Quicksort
+- Heapsort
 
 
 
